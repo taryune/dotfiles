@@ -1,0 +1,38 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+[[plugins]]
+repo = 'cespare/vim-toml'
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_source = '''
+    " qでバッファ閉じる
+    au FileType qf nnoremap <silent><buffer>q :quit<CR>
+    
+    " \rで書き込んで実行
+    let g:quickrun_no_default_key_mappings = 1
+    nnoremap \r :write<CR>:QuickRun -mode n<CR>        
+    xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR> 
+    let g:quickrun_no_default_key_mappings = 1
+    nnoremap \r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
+    xnoremap \r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
+    
+    " C-cで強制終了
+    nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+'''
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+
+# Colors
+[[plugins]]
+repo = 'lu-ren/SerialExperimentsLain'
