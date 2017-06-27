@@ -1,5 +1,9 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 [[plugins]]
@@ -14,7 +18,7 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-hook_source = '''
+hook_add = '''
     " qでバッファ閉じる
     au FileType qf nnoremap <silent><buffer>q :quit<CR>
     
@@ -28,10 +32,23 @@ hook_source = '''
     
     " C-cで強制終了
     nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+    " latexmk
+    let g:quickrun_config = {}
+    let g:quickrun_config['tex'] = {
+            \   'command' : 'latexmk',
+            \   'outputter' : 'error',
+            \   'outputter/error/error' : 'quickfix',
+            \   'cmdopt': '-pv -pdfdvi',
+            \   'exec': ['%c %o %s']
+            \ }
 '''
 
 [[plugins]]
 repo = 'tyru/caw.vim'
+hook_post_source = ''''
+    nmap \c <Plug>(caw:zeropos:toggle)
+    vmap \c <Plug>(caw:zeropos:toggle)
+'''
 
 # Colors
 [[plugins]]

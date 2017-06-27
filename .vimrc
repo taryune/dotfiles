@@ -63,8 +63,4 @@ set clipboard=unnamed,unnamedplus
     nnoremap sv :<C-u>vs<CR>
     nnoremap sN :<C-u>bn<CR>
     nnoremap st :<C-u>tabnew<CR>
-    
-    "caw
-    nmap \c <Plug>(caw:zeropos:toggle)
-    vmap \c <Plug>(caw:zeropos:toggle)
 
