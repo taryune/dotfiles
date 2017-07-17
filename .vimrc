@@ -39,7 +39,7 @@ syntax on
 set number
 set nocompatible
 set clipboard=unnamed,unnamedplus
-
+set cursorline
 " Color Scheme
     colorscheme SerialExperimentsLain
 
@@ -63,4 +63,3 @@ set clipboard=unnamed,unnamedplus
     nnoremap sv :<C-u>vs<CR>
     nnoremap sN :<C-u>bn<CR>
     nnoremap st :<C-u>tabnew<CR>
-

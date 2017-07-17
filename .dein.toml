@@ -45,7 +45,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tyru/caw.vim'
-hook_post_source = ''''
+hook_add = ''''
     nmap \c <Plug>(caw:zeropos:toggle)
     vmap \c <Plug>(caw:zeropos:toggle)
 '''
