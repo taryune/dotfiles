@@ -34,6 +34,7 @@
 
 filetype plugin indent on
 filetype indent on
+
 set backspace=indent,eol,start
 syntax on
 set number
@@ -68,4 +69,9 @@ let g:tex_conceal=''
     nnoremap st :<C-u>tabnew<CR>
     nnoremap sn gt
     nnoremap sp gT
- 
+
+" Clojure 
+  let vimclojure#HighlightBuiltins=1
+  let vimclojure#HighlightContrib=1
+  let vimclojure#DynamicHighlighting=1
+  let vimclojure#ParenRainbow=1

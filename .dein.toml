@@ -17,9 +17,6 @@ repo = 'cespare/vim-toml'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo = 'sophacles/vim-processing'
-
-[[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = '''
     " qでバッファ閉じる
@@ -56,8 +53,13 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap <silent><C-e> :NERDTreeToggle<CR>
+'''
+[[plugins]]
 repo = 'tyru/caw.vim'
-hook_add = ''''
+hook_add = '''
     nmap \c <Plug>(caw:zeropos:toggle)
     vmap \c <Plug>(caw:zeropos:toggle)
 '''
@@ -68,3 +70,13 @@ repo = 'lu-ren/SerialExperimentsLain'
 # ts
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
+
+# processing
+[[plugins]]
+repo = 'sophacles/vim-processing'
+
+# Clojure
+[[plugins]]
+repo = 'vim-scripts/VimClojure'
+
+
