@@ -43,32 +43,34 @@ set clipboard=unnamed,unnamedplus
 set cursorline
 let g:tex_conceal=''
 
+
 " Color Scheme
-    colorscheme SerialExperimentsLain
+colorscheme SerialExperimentsLain
 
 " Tab settings
-    set tabstop=2
-    set autoindent
-    set expandtab
-    set shiftwidth=2
+set tabstop=2
+set autoindent
+set expandtab
+set shiftwidth=2
 
 " Mappings
-    nmap <F1> <Nop>
+  nmap <F1> <Nop>
 
-    nnoremap ; :
-    
-    " Split
-    nnoremap s <Nop>
-    nnoremap sj <C-w>j
-    nnoremap sk <C-w>k
-    nnoremap sl <C-w>l
-    nnoremap sh <C-w>h
-    nnoremap sv :<C-u>vs<CR>
-    nnoremap sO <C-w>=
-   " Tab 
-    nnoremap st :<C-u>tabnew<CR>
-    nnoremap sn gt
-    nnoremap sp gT
+  nnoremap ; :
+  
+  " Split
+  nnoremap s <Nop>
+  nnoremap sj <C-w>j
+  nnoremap sk <C-w>k
+  nnoremap sl <C-w>l
+  nnoremap sh <C-w>h
+  nnoremap sv :<C-u>vs<CR>
+  nnoremap sO <C-w>=
+ 
+  "Tab 
+  nnoremap st :<C-u>tabnew<CR>
+  nnoremap sn gt
+  nnoremap sp gT
 
 " Clojure 
   let vimclojure#HighlightBuiltins=1

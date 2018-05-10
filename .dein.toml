@@ -11,8 +11,68 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-[[plugins]]
-repo = 'cespare/vim-toml'
+hook_add = '''
+  let g:lightline = {
+          \ 'colorscheme': 'wombat',
+          \ 'mode_map': {'c': 'NORMAL'},
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+          \ },
+          \ 'component_function': {
+          \   'modified': 'LightlineModified',
+          \   'readonly': 'LightlineReadonly',
+          \   'fugitive': 'LightlineFugitive',
+          \   'filename': 'LightlineFilename',
+          \   'fileformat': 'LightlineFileformat',
+          \   'filetype': 'LightlineFiletype',
+          \   'fileencoding': 'LightlineFileencoding',
+          \   'mode': 'LightlineMode'
+          \ }
+          \ }
+
+  function! LightlineModified()
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  endfunction
+
+  function! LightlineReadonly()
+    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'x' : ''
+  endfunction
+
+  function! LightlineFilename()
+    return ('' != LightlineReadonly() ? LightlineReadonly() . ' ' : '') .
+          \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+          \  &ft == 'unite' ? unite#get_status_string() :
+          \  &ft == 'vimshell' ? vimshell#get_status_string() :
+          \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+          \ ('' != LightlineModified() ? ' ' . LightlineModified() : '')
+  endfunction
+
+  function! LightlineFugitive()
+    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+      return fugitive#head()
+    else
+      return ''
+    endif
+  endfunction
+
+  function! LightlineFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+  endfunction
+
+  function! LightlineFiletype()
+    return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+  endfunction
+
+  function! LightlineFileencoding()
+    return winwidth(0) > 70 ? (&fenc !=# '' ? &fenc : &enc) : ''
+  endfunction
+
+  function! LightlineMode()
+    return winwidth(0) > 60 ? lightline#mode() : ''
+  endfunction
+'''
+
+
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
@@ -22,7 +82,7 @@ hook_add = '''
     " qでバッファ閉じる
     au FileType qf nnoremap <silent><buffer>q :quit<CR>
     
-    "
+    " 出力バッファへ移動
    
    " \rで書き込んで実行
     let g:quickrun_no_default_key_mappings = 1
@@ -39,6 +99,7 @@ hook_add = '''
         \   "_" : {
             \   "hook/close_buffer/enable_empty_data" : 1,
             \   "outputter/buffer/split" : ":botright 8sp",
+            \   "outputter/buffer/into" : 1,
             \   }
         \}
     
@@ -52,11 +113,14 @@ hook_add = '''
             \ }
 '''
 
+# NERDTree
 [[plugins]]
 repo = 'scrooloose/nerdtree'
-hook_add = '''
+hook_add= '''
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
+  let NERDTreeMinimalUI=1
 '''
+
 [[plugins]]
 repo = 'tyru/caw.vim'
 hook_add = '''
@@ -79,4 +143,6 @@ repo = 'sophacles/vim-processing'
 [[plugins]]
 repo = 'vim-scripts/VimClojure'
 
-
+# toml
+[[plugins]]
+repo = 'cespare/vim-toml'
