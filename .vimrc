@@ -41,6 +41,7 @@ set number
 set nocompatible
 set clipboard=unnamed,unnamedplus
 set cursorline
+set mouse=a
 let g:tex_conceal=''
 
 
