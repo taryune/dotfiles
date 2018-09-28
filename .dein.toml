@@ -72,7 +72,6 @@ hook_add = '''
   endfunction
 '''
 
-
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
@@ -86,8 +85,8 @@ hook_add = '''
    
    " \rで書き込んで実行
     let g:quickrun_no_default_key_mappings = 1
-    nnoremap \r :write<CR>:QuickRun -mode n<CR>        
-    xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR> 
+    nnoremap \r :write<CR>:QuickRun -mode n<CR>
+    xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR>
     let g:quickrun_no_default_key_mappings = 1
     nnoremap \r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
     xnoremap \r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
@@ -120,13 +119,18 @@ hook_add= '''
   nnoremap <silent><C-e> :NERDTreeToggle<CR>
   let NERDTreeMinimalUI=1
 '''
-
+# caw
 [[plugins]]
 repo = 'tyru/caw.vim'
 hook_add = '''
     nmap \c <Plug>(caw:zeropos:toggle)
     vmap \c <Plug>(caw:zeropos:toggle)
 '''
+
+# whitespace
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
 # Colors
 [[plugins]]
 repo = 'lu-ren/SerialExperimentsLain'
@@ -143,6 +147,50 @@ repo = 'sophacles/vim-processing'
 [[plugins]]
 repo = 'vim-scripts/VimClojure'
 
+# autopep8
+[[plugins]]
+repo = 'tell-k/vim-autopep8'
+hook_add = '''
+  function! Preserve(command)
+    " Save the last search.
+    let search = @/
+    " Save the current cursor position.
+    let cursor_position = getpos('.')
+    " Save the current window position.
+    normal! H
+    let window_position = getpos('.')
+    call setpos('.', cursor_position)
+    " Execute the command.
+    execute a:command
+    " Restore the last search.
+    let @/ = search
+    " Restore the previous window position.
+    call setpos('.', window_position)
+    normal! zt
+    " Restore the previous cursor position.
+    call setpos('.', cursor_position)
+  endfunction
+
+  function! Autopep8()
+    call Preserve(':silent %!autopep8 -')
+  endfunction
+
+  " Shift + F で自動修正
+  autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
+'''
+
+# previm
+[[plugins]]
+repo = 'previm/previm'
+hook_add = '''
+	let g:previm_open_cmd = 'open -a Firefox'
+  augroup PrevimSettings
+      autocmd!
+      autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+  augroup END
+'''
 # toml
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+
