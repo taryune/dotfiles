@@ -147,6 +147,13 @@ repo = 'sophacles/vim-processing'
 [[plugins]]
 repo = 'vim-scripts/VimClojure'
 
+
+# glsl
+[[plugins]]
+repo = 'tikhomirov/vim-glsl'
+hook_add = '''
+  autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+'''
 # autopep8
 [[plugins]]
 repo = 'tell-k/vim-autopep8'

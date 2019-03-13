@@ -1,6 +1,6 @@
 $latex         = 'platex -synctex=1 %O %S';
 $bibtex        = 'pbibtex %O %B';
-$dvipdf = 'dvipdfmx %O -o %D %S';
+$dvipdf = 'dvipdfmx -f ptex-ipa.map %O -o %D %S';
 if ($^O eq 'darwin') {
     $pdf_previewer = 'open -a Preview %S';
 } elsif ($^O eq 'linux') {
