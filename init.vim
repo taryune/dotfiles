@@ -16,7 +16,7 @@
     if dein#load_state(s:dein_dir)
       call dein#begin(s:dein_dir)
 
-      " toml 
+      " toml
       let s:toml = '~/.dein.toml'
       let s:lazy_toml = '~/.dein_lazy.toml'
       call dein#load_toml(s:toml, {'lazy': 0})
@@ -25,7 +25,7 @@
       call dein#end()
       call dein#save_state()
     endif
-    
+
     " check install
     if dein#check_install()
         call dein#install()
@@ -46,7 +46,8 @@ let g:tex_conceal=''
 
 
 " Color Scheme
-colorscheme SerialExperimentsLain
+set termguicolors
+colorscheme pencil
 
 " Tab settings
 set tabstop=2
