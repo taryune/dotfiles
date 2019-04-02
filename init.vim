@@ -47,6 +47,7 @@ let g:tex_conceal=''
 
 " Color Scheme
 set termguicolors
+set background=dark
 colorscheme pencil
 
 " Tab settings
@@ -66,7 +67,7 @@ set shiftwidth=2
   nnoremap sh <C-w>h
   nnoremap sv :<C-u>vs<CR>
   nnoremap sO <C-w>=
-  "Tab 
+  "Tab
   nnoremap st :<C-u>tabnew<CR>
   nnoremap sn gt
   nnoremap sp gT

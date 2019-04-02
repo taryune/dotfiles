@@ -18,7 +18,7 @@ repo = 'yami-beta/lightline-pencil.vim'
 repo = 'itchyny/lightline.vim'
 hook_add = '''
   let g:lightline = {
-          \ 'colorscheme': 'pencil',
+          \ 'colorscheme': 'wombat',
           \ 'mode_map': {'c': 'NORMAL'},
           \ 'active': {
           \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
@@ -135,14 +135,6 @@ repo = 'bronson/vim-trailing-whitespace'
 # ts
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
-
-# processing
-[[plugins]]
-repo = 'sophacles/vim-processing'
-
-# Clojure
-[[plugins]]
-repo = 'vim-scripts/VimClojure'
 
 # glsl
 [[plugins]]
