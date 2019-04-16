@@ -4,16 +4,13 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
 
 # Colors
-# [[plugins]]
+[[plugins]]
 # repo = 'dracula/vim'
-[[plugins]]
-repo = 'reedes/vim-colors-pencil'
-[[plugins]]
-repo = 'yami-beta/lightline-pencil.vim'
+repo = 'cocopon/iceberg.vim'
+# repo = 'reedes/vim-colors-pencil'
+
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
@@ -80,46 +77,6 @@ hook_add = '''
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-hook_add = '''
-    " qでバッファ閉じる
-    au FileType qf nnoremap <silent><buffer>q :quit<CR>
-    " 出力バッファへ移動
-   " \rで書き込んで実行
-    let g:quickrun_no_default_key_mappings = 1
-    nnoremap \r :write<CR>:QuickRun -mode n<CR>
-    xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR>
-    let g:quickrun_no_default_key_mappings = 1
-    nnoremap \r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
-    xnoremap \r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
-    " C-cで強制終了
-    nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-
-    let g:quickrun_config = {
-        \   "_" : {
-            \   "hook/close_buffer/enable_empty_data" : 1,
-            \   "outputter/buffer/split" : ":botright 8sp",
-            \   "outputter/buffer/into" : 1,
-            \   }
-        \}
-    " latexmk
-    let g:quickrun_config['tex'] = {
-            \   'command' : 'latexmk',
-            \   'outputter' : 'error',
-            \   'outputter/error/error' : 'quickfix',
-            \   'cmdopt': '-pv -pdfdvi',
-            \   'exec': ['%c %o %s']
-            \ }
-'''
-
-# NERDTree
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add= '''
-  nnoremap <silent><C-e> :NERDTreeToggle<CR>
-  let NERDTreeMinimalUI=1
-'''
 # caw
 [[plugins]]
 repo = 'tyru/caw.vim'
@@ -142,48 +99,16 @@ repo = 'tikhomirov/vim-glsl'
 hook_add = '''
   autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 '''
-# autopep8
+# markdown
 [[plugins]]
-repo = 'tell-k/vim-autopep8'
+repo = 'plasticboy/vim-markdown'
+on_ft = 'markdown'
 hook_add = '''
-  function! Preserve(command)
-    " Save the last search.
-    let search = @/
-    " Save the current cursor position.
-    let cursor_position = getpos('.')
-    " Save the current window position.
-    normal! H
-    let window_position = getpos('.')
-    call setpos('.', cursor_position)
-    " Execute the command.
-    execute a:command
-    " Restore the last search.
-    let @/ = search
-    " Restore the previous window position.
-    call setpos('.', window_position)
-    normal! zt
-    " Restore the previous cursor position.
-    call setpos('.', cursor_position)
-  endfunction
-
-  function! Autopep8()
-    call Preserve(':silent %!autopep8 -')
-  endfunction
-
-  " Shift + F で自動修正
-  autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 '''
 
-# previm
-[[plugins]]
-repo = 'previm/previm'
-hook_add = '''
-	let g:previm_open_cmd = 'open -a Firefox'
-  augroup PrevimSettings
-      autocmd!
-      autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-  augroup END
-'''
 # toml
 [[plugins]]
 repo = 'cespare/vim-toml'

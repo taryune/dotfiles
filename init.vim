@@ -47,8 +47,7 @@ let g:tex_conceal=''
 
 " Color Scheme
 set termguicolors
-set background=dark
-colorscheme pencil
+colorscheme iceberg
 
 " Tab settings
 set tabstop=2
