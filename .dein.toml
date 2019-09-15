@@ -4,12 +4,20 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
 
 # Colors
 [[plugins]]
 # repo = 'dracula/vim'
 repo = 'cocopon/iceberg.vim'
 # repo = 'reedes/vim-colors-pencil'
+
+# Coc
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+build = 'coc#util#install()'
+hook_add = 'source ~/.config/nvim/coc-setting.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -76,6 +84,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+hook_add = '''
+let g:indentLine_setConceal = 0
+'''
 
 # caw
 [[plugins]]
@@ -104,11 +115,11 @@ hook_add = '''
 repo = 'plasticboy/vim-markdown'
 on_ft = 'markdown'
 hook_add = '''
+let g:vimmarkdown_conceal=''
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 '''
-
 # toml
 [[plugins]]
 repo = 'cespare/vim-toml'
