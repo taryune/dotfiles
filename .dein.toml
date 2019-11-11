@@ -17,7 +17,9 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 build = 'coc#util#install()'
-hook_add = 'source ~/.config/nvim/coc-setting.vim'
+hook_add = '''
+source ~/.config/nvim/coc-setting.vim
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -120,6 +122,7 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 0
 '''
+
 # toml
 [[plugins]]
 repo = 'cespare/vim-toml'
