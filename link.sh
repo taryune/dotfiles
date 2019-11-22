@@ -6,4 +6,4 @@ ln -sf ~/dotfiles/.dein_lazy.toml ~/.dein_lazy.toml
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
 ln -sf ~/dotfiles/init.vim ~/.config/nvim/init.vim
 ln -sf ~/dotfiles/config.js ~/.config/oni/config.js
-
+ln -sf ~/dotfiles/coc-setting.vim ~/.config/nvim/coc-setting.vim
