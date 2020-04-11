@@ -14,73 +14,6 @@ depends = ['neosnippet-snippets']
 repo = 'Shougo/neosnippet-snippets'
 on_i = 1
 
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-hook_add = '''
-    " qでバッファ閉じる
-    au FileType qf nnoremap <silent><buffer>q :quit<CR>
-    " 出力バッファへ移動
-   " \rで書き込んで実行
-    let g:quickrun_no_default_key_mappings = 1
-    nnoremap \r :write<CR>:QuickRun -mode n<CR>
-    xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR>
-    let g:quickrun_no_default_key_mappings = 1
-    nnoremap \r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
-    xnoremap \r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
-    " C-cで強制終了
-    nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-
-    let g:quickrun_config = {
-        \   "_" : {
-            \   "hook/close_buffer/enable_empty_data" : 1,
-            \   "outputter/buffer/split" : ":botright 8sp",
-            \   "outputter/buffer/into" : 1,
-            \   }
-        \}
-    " latexmk
-    let g:quickrun_config['tex'] = {
-            \   'command' : 'latexmk',
-            \   'outputter' : 'error',
-            \   'outputter/error/error' : 'quickfix',
-            \   'cmdopt': '-pv -pdfdvi',
-            \   'exec': ['%c %o %s']
-            \ }
-'''
-on_i = 1
-
-# autopep8
-[[plugins]]
-repo = 'tell-k/vim-autopep8'
-hook_add = '''
-  function! Preserve(command)
-    " Save the last search.
-    let search = @/
-    " Save the current cursor position.
-    let cursor_position = getpos('.')
-    " Save the current window position.
-    normal! H
-    let window_position = getpos('.')
-    call setpos('.', cursor_position)
-    " Execute the command.
-    execute a:command
-    " Restore the last search.
-    let @/ = search
-    " Restore the previous window position.
-    call setpos('.', window_position)
-    normal! zt
-    " Restore the previous cursor position.
-    call setpos('.', cursor_position)
-  endfunction
-
-  function! Autopep8()
-    call Preserve(':silent %!autopep8 -')
-  endfunction
-
-  " Shift + F で自動修正
-  autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
-'''
-on_i = 1
-
 # previm
 [[plugins]]
 repo = 'previm/previm'
@@ -101,4 +34,13 @@ hook_add= '''
   let NERDTreeMinimalUI=1
 '''
 on_i =1
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+
+hook_add= '''
+  nnoremap <C-f> :Autoformat<CR>
+'''
+on_i =1
+
 

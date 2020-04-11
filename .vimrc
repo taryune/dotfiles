@@ -17,17 +17,17 @@ set expandtab
 set shiftwidth=2
 
 " Mappings
-  nmap <F1> <Nop>
-  nnoremap ; :
-  " Split
-  nnoremap s <Nop>
-  nnoremap sj <C-w>j
-  nnoremap sk <C-w>k
-  nnoremap sl <C-w>l
-  nnoremap sh <C-w>h
-  nnoremap sv :<C-u>vs<CR>
-  nnoremap sO <C-w>=
-  "Tab
-  nnoremap st :<C-u>tabnew<CR>
-  nnoremap sn gt
-  nnoremap sp gT
+nmap <F1> <Nop>
+nnoremap ; :
+" Split
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sv :<C-u>vs<CR>
+nnoremap sO <C-w>=
+"Tab
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
