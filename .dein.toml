@@ -102,16 +102,6 @@ hook_add = '''
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
-# ts
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-
-# glsl
-[[plugins]]
-repo = 'tikhomirov/vim-glsl'
-hook_add = '''
-  autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
-'''
 # markdown
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
@@ -129,4 +119,10 @@ repo = 'cespare/vim-toml'
 
 # svelte
 [[plugins]]
-repo ='evanleck/vim-svelte'
+repo = 'evanleck/vim-svelte'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
