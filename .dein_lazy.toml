@@ -3,8 +3,8 @@ repo = 'Shougo/neosnippet'
 hook_source = '''
   let g:deoplete#enable_at_startup = 1
   inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+  \ neosnippet#expandable_or_jumpable() ?
+  \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
 on_i  = 1
 on_ft = ['snippet']
@@ -14,17 +14,40 @@ depends = ['neosnippet-snippets']
 repo = 'Shougo/neosnippet-snippets'
 on_i = 1
 
-# previm
 [[plugins]]
-repo = 'previm/previm'
+repo = 'thinca/vim-quickrun'
 hook_add = '''
-	let g:previm_open_cmd = 'open -a Firefox'
-  augroup PrevimSettings
-      autocmd!
-      autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-  augroup END
+  " qでバッファ閉じる
+  au FileType qf nnoremap <silent><buffer>q :quit<CR>
+
+  "
+
+  " \rで書き込んで実行
+  let g:quickrun_no_default_key_mappings = 1
+  nnoremap \r :write<CR>:QuickRun -mode n<CR>
+  xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR>
+  let g:quickrun_no_default_key_mappings = 1
+  nnoremap \r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
+  xnoremap \r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
+
+  " C-cで強制終了
+  nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+  let g:quickrun_config = {
+  \   "_" : {
+  \   "hook/close_buffer/enable_empty_data" : 1,
+  \   "outputter/buffer/split" : ":botright 8sp",
+  \   }
+  \}
+
+  " latexmk
+  let g:quickrun_config['tex'] = {
+  \   'command' : 'latexmk',
+  \   'outputter' : 'error',
+  \   'outputter/error/error' : 'quickfix',
+  \   'cmdopt': '-pv -pdfdvi',
+  \   'exec': ['%c %o %s']
+  \ }
 '''
-on_i = 1
 
 # NERDTree
 [[plugins]]
@@ -35,12 +58,39 @@ hook_add= '''
 '''
 on_i =1
 
+# autoformat
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
-
 hook_add= '''
   nnoremap <C-f> :Autoformat<CR>
 '''
 on_i =1
 
+# markdown
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+hook_add = '''
+  let g:vimmarkdown_conceal=''
+  let g:vim_markdown_folding_disabled = 1
+  let g:vim_markdown_auto_insert_bullets = 0
+  let g:vim_markdown_new_list_item_indent = 0
+'''
 
+# toml
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+# typescript
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['typescript']
+
+# dart
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = ['dart']

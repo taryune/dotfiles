@@ -44,10 +44,6 @@ set cursorline
 set mouse=a
 let g:tex_conceal=''
 
-" Color Scheme
-set termguicolors
-colorscheme iceberg
-
 " Tab settings
 set tabstop=2
 set autoindent
