@@ -58,14 +58,6 @@ hook_add= '''
 '''
 on_i =1
 
-# autoformat
-[[plugins]]
-repo = 'Chiel92/vim-autoformat'
-hook_add= '''
-  nnoremap <C-f> :Autoformat<CR>
-'''
-on_i =1
-
 # markdown
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
