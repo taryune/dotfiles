@@ -9,12 +9,10 @@ repo = 'Shougo/context_filetype.vim'
 
 # Colors
 [[plugins]]
-repo = 'arcticicestudio/nord-vim'
-repo = 'reedes/vim-colors-pencil'
+repo = 'cocopon/iceberg.vim/'
 hook_add = '''
   set termguicolors
-  set background=dark
-  colorscheme pencil
+  colorscheme iceberg
 '''
 
 # yank highlight
@@ -23,6 +21,7 @@ repo = 'machakann/vim-highlightedyank'
 hook_add = '''
   let g:highlightedyank_highlight_duration = 300
 '''
+
 # caw
 [[plugins]]
 repo = 'tyru/caw.vim'
@@ -31,6 +30,21 @@ hook_add = '''
   vmap <Leader>c <Plug>(caw:zeropos:toggle)
 '''
 
+# git
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+  nnoremap <leader>gap :Git add %:p<CR><CR>
+  nnoremap <leader>gaa :Git add .<CR><CR>
+  nnoremap <leader>gc :Gcommit<CR><CR>
+  nnoremap <leader>gs :Gstatus<CR>
+  nnoremap <leader>gp :Gpush<CR>
+  nnoremap <leader>gd :Gdiff<CR>
+  nnoremap <leader>gl :Glog<CR>
+  nnoremap <leader>gb :Gblame<CR>
+'''
 # whitespace
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -39,7 +53,7 @@ repo = 'bronson/vim-trailing-whitespace'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-# Coc
+# coc
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 build = 'coc#util#install()'
@@ -58,9 +72,10 @@ hook_add = '''
   nmap W <Plug>(easymotion-overwin-w)
 '''
 
+# airline
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 hook_add = '''
-  let g:airline_theme = 'pencil'
+  let g:airline_theme = 'iceberg'
 '''
 
