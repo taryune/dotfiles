@@ -13,6 +13,7 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'drewtempelmeyer/palenight.vim'
 hook_add = '''
   set termguicolors
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
   colorscheme palenight
 '''
 
@@ -27,7 +28,7 @@ hook_add = '''
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'
 hook_add = '''
-  let g:highlightedyank_highlight_duration = 300
+  let g:highlightedyank_highlight_duration = 200
 '''
 
 # caw
@@ -77,8 +78,8 @@ hook_add = '''
   let g:EasyMotion_smartcase = 1
   map  f <Plug>(easymotion-bd-f)
   nmap f <Plug>(easymotion-overwin-f)
-  map  W <Plug>(easymotion-bd-w)
-  nmap W <Plug>(easymotion-overwin-w)
+  map  <C-w> <Plug>(easymotion-bd-w)
+  nmap <C-w> <Plug>(easymotion-overwin-w)
 '''
 
 
