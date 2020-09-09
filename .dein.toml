@@ -9,10 +9,18 @@ repo = 'Shougo/context_filetype.vim'
 
 # Colors
 [[plugins]]
-repo = 'cocopon/iceberg.vim/'
+# repo = 'cocopon/iceberg.vim/'
+repo = 'drewtempelmeyer/palenight.vim'
 hook_add = '''
   set termguicolors
-  colorscheme iceberg
+  colorscheme palenight
+'''
+
+# airline
+[[plugins]]
+repo    = 'vim-airline/vim-airline'
+hook_add = '''
+  let g:airline_theme = 'palenight'
 '''
 
 # yank highlight
@@ -45,6 +53,7 @@ hook_add = '''
   nnoremap <leader>gl :Glog<CR>
   nnoremap <leader>gb :Gblame<CR>
 '''
+
 # whitespace
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
@@ -72,10 +81,4 @@ hook_add = '''
   nmap W <Plug>(easymotion-overwin-w)
 '''
 
-# airline
-[[plugins]]
-repo    = 'vim-airline/vim-airline'
-hook_add = '''
-  let g:airline_theme = 'iceberg'
-'''
 
