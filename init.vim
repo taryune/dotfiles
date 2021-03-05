@@ -52,7 +52,6 @@ set shiftwidth=2
 
 " Mappings
   nmap <F1> <Nop>
-  nnoremap ; :
   " Split
   nnoremap s <Nop>
   nnoremap sj <C-w>j
