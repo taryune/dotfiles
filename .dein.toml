@@ -85,4 +85,5 @@ hook_add = '''
   nmap <C-w> <Plug>(easymotion-overwin-w)
 '''
 
-
+[[plugins]]
+repo = 'sheerun/vim-polyglot'

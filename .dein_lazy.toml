@@ -29,12 +29,9 @@ on_ft = ['typescript', 'typescriptreact']
 [[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
 on_ft = ['typescript', 'typescriptreact']
-
-# solidity
-[[plugins]]
-repo = 'tomlion/vim-solidity'
-on_ft = ['solidity']
-
+hook_add = '''
+  let g:vim_jsx_pretty_colorful_config = 1
+'''
 
 # dart
 [[plugins]]

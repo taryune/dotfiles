@@ -42,6 +42,9 @@ set nocompatible
 set clipboard=unnamed,unnamedplus
 set cursorline
 set mouse=a
+" auto reload
+set autoread
+au CursorHold * checktime
 let g:tex_conceal=''
 
 " Tab settings

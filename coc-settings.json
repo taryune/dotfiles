@@ -1,5 +1,5 @@
 {
- "languageserver": {
+  "languageserver": {
     "efm": {
       "command": "efm-langserver",
       "args": [],
@@ -7,5 +7,6 @@
       // "args": ["-c", "/path/to/your/config.yaml"],
       "filetypes": ["vim", "tex", "markdown", "yaml"]
     }
-  }
+  },
+  "eslint.filetypes": ["javascript", "vue"]
 }
