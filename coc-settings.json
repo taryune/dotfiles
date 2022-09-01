@@ -5,8 +5,9 @@
       "args": [],
       // custom config path
       // "args": ["-c", "/path/to/your/config.yaml"],
-      "filetypes": ["vim", "tex", "markdown", "yaml"]
+      "filetypes": ["tex", "markdown"]
     }
   },
+  "diagnostic.displayByAle": true,
   "eslint.filetypes": ["javascript", "vue"]
 }

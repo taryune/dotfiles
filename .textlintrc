@@ -1,16 +1,17 @@
 {
   "plugins": ["latex2e"],
   "rules": {
-    "preset-ja-technical-writing": {
-      "ja-no-mixed-period": {
-        "periodMark": "．" // 論文は全角カンマ
-      },
-      "max-kanji-continuous-len": {
-        max: 10, // 長い用語が多いため、8文字まで許容する
-        allow: ["倍精度浮動小数点数"]
-      },
-      "no-doubled-joshi": false, //preset-japaneseと重複のため
-      "sentence-length": false //preset-japaneseと重複のため
+    "spelling": {
+        "language": "en",
+        "skipPatterns": ["JavaScript"],
+        "wordDefinitionRegexp": "/[\\w']+/g",
+        "suggestCorrections": true,
+    },
+    "rousseau": {
+        "showLevels": ["suggestion", "warning", "error"]
+    },
+    "alex": {
+        "allow": []
     },
   }
 }
