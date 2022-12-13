@@ -3,6 +3,8 @@
 repo = 'lambdalisue/fern.vim'
 hook_add = '''
   nnoremap <silent><C-e> :Fern . -drawer -toggle<CR>
+  let g:fern#default_hidden=1
+
   function! s:init_fern() abort
     " Define NERDTree like mappings
     nmap <buffer> o <Plug>(fern-action-open:edit)
@@ -32,9 +34,11 @@ hook_add = '''
     autocmd FileType fern call s:init_fern()
   augroup END
 '''
+
 [[plugins]]
-repo = 'LumaKernel/fern-mapping-fzf.vim'
-depends = ['fzf', 'fern.vim']
+repo = 'lambdalisue/fern-git-status.vim'
+depends = ['lambdalisue/fern.vim']
+
 
 # markdown
 [[plugins]]
