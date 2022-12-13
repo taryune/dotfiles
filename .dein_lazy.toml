@@ -2,7 +2,7 @@
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = '''
-  nnoremap <silent><C-e> :Fern . -drawer -toggle<CR>
+  nnoremap <silent><C-e> :Fern . -reveal=% -drawer -toggle<CR>
   let g:fern#default_hidden=1
 
   function! s:init_fern() abort
@@ -86,6 +86,22 @@ hook_add = '''
         \ 'vars':       'rightbelow 60vnew',
         \ 'stack':      'rightbelow 10new',
   \ }
+
+  " Beautiy
+  let g:go_highlight_types = 1
+  let g:go_highlight_fields = 1
+  let g:go_highlight_functions = 1
+  let g:go_highlight_function_calls = 1
+  let g:go_highlight_operators = 1
+
+  " Info
+  let g:go_auto_type_info = 1
+  set updatetime=100
+
+  " Import
+  let g:go_fmt_command = "goimports"
+
+  " Keybindings
   autocmd FileType go nmap <leader>t <Plug>(go-test)
   autocmd FileType go nmap <leader>T <Plug>(go-test-func)
   autocmd FileType go nmap <leader>b <Plug>(go-build)
@@ -94,17 +110,25 @@ hook_add = '''
   autocmd FileType go nmap <leader>db  :GoDebugBreakpoint<CR>
   autocmd FileType go nmap <leader>ds  :GoDebugStop<CR>
   autocmd FileType go nmap <leader>dp  :GoDebugPrint 
+
+  " Linter
+  let g:go_metalinter_enabled = []
+
+  let g:go_metalinter_command = 'golangci-lint'
+  let g:go_metalinter_autosave = 1
+  let g:go_metalinter_autosave_enabled = ['vet','errcheck','staticcheck','unused']
+
 '''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = '''
-  " qでバッファ閉じる
+  " Close buffer
   au FileType qf nnoremap <silent><buffer>q :quit<CR>
 
   "
 
-  " \rで書き込んで実行
+  " Write
   let g:quickrun_no_default_key_mappings = 1
   nnoremap \r :write<CR>:QuickRun -mode n<CR>
   xnoremap \r :<C-U>write<CR>gv:QuickRun -mode v<CR>
@@ -112,7 +136,7 @@ hook_add = '''
   nnoremap \r :cclose<CR>:write<CR>:QuickRun -mode n<CR>
   xnoremap \r :<C-U>cclose<CR>:write<CR>gv:QuickRun -mode v<CR>
 
-  " C-cで強制終了
+  " Force quit
   nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
   let g:quickrun_config = {
   \   "_" : {
