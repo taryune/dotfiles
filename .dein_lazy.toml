@@ -43,6 +43,25 @@ on_ft = ['dart']
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
 
+# golang
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+hook_add = '''
+  let g:go_debug_windows = {
+        \ 'vars':       'rightbelow 60vnew',
+        \ 'stack':      'rightbelow 10new',
+  \ }
+  autocmd FileType go nmap <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <leader>T <Plug>(go-test-func)
+  autocmd FileType go nmap <leader>b <Plug>(go-build)
+  autocmd FileType go nmap <leader>dt  :GoDebugTestFunc<CR>
+  autocmd FileType go nmap <leader>dc  :GoDebugContinue<CR>
+  autocmd FileType go nmap <leader>db  :GoDebugBreakpoint<CR>
+  autocmd FileType go nmap <leader>ds  :GoDebugStop<CR>
+  autocmd FileType go nmap <leader>dp  :GoDebugPrint 
+'''
+
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = '''

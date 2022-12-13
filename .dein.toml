@@ -3,8 +3,6 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 [[plugins]]
-repo = 'Shougo/denite.nvim'
-[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 # Colors
@@ -87,6 +85,22 @@ hook_add = '''
 
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+
+# d2
+[[plugins]]
+repo = 'terrastruct/d2-vim'
+
+# fzf
+[[plugins]]
+repo = 'junegunn/fzf'
+build = 'fzf#install()'
+hook_add = '''
+  noremap <C-p> :Files<CR>
+  noremap <leader><space> :Command<CR>
+'''
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
 
 # ale
 [[plugin]]
