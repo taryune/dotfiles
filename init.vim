@@ -67,3 +67,18 @@ set shiftwidth=2
   nnoremap st :<C-u>tabnew<CR>
   nnoremap sn gt
   nnoremap sp gT
+
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    disable = {
+    }
+  },
+  indent = {
+    enable = true,
+  },
+  ensure_installed = 'all'
+}
+EOF

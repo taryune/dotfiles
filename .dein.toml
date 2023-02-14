@@ -55,10 +55,6 @@ hook_add = '''
   nnoremap <leader>gb :Gblame<CR>
 '''
 
-# whitespace
-[[plugins]]
-repo = 'bronson/vim-trailing-whitespace'
-
 # indent
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -108,3 +104,8 @@ repo = 'dense-analysis/ale'
 hook_add = '''
   let g:ale_disable_lsp = 1
 '''
+
+# treesitter
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+hook_post_update = 'TSUpdate'
