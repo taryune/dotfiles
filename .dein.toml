@@ -62,14 +62,6 @@ hook_add = '''
   let g:indentLine_fileTypeExclude = ['md', 'markdown']
 '''
 
-# coc
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-build = 'coc#util#install()'
-hook_add = '''
-  source ~/.config/nvim/coc-setting.vim
-'''
-
 # easy motion
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
@@ -105,7 +97,22 @@ hook_add = '''
   let g:ale_disable_lsp = 1
 '''
 
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+
 # treesitter
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 hook_post_update = 'TSUpdate'
+
+# nvim cmp
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lsp'
+[[plugins]]
+repo = 'hrsh7th/cmp-buffer'
+[[plugins]]
+repo = 'hrsh7th/cmp-path'
+[[plugins]]
+repo = 'hrsh7th/cmp-cmdline'
+[[plugins]]
+repo = 'hrsh7th/nvim-cmp'

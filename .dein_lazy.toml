@@ -40,33 +40,6 @@ repo = 'lambdalisue/fern-git-status.vim'
 depends = ['lambdalisue/fern.vim']
 
 
-# markdown
-[[plugins]]
-repo = 'plasticboy/vim-markdown'
-on_ft = ['markdown']
-hook_add = '''
-  let g:vimmarkdown_conceal=''
-  let g:vim_markdown_folding_disabled = 1
-  let g:vim_markdown_auto_insert_bullets = 0
-  let g:vim_markdown_new_list_item_indent = 0
-'''
-
-# toml
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = ['toml']
-
-# java/typescript
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript', 'typescriptreact']
-[[plugins]]
-repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['typescript', 'typescriptreact']
-hook_add = '''
-  let g:vim_jsx_pretty_colorful_config = 1
-'''
-
 # dart
 [[plugins]]
 repo = 'dart-lang/dart-vim-plugin'
