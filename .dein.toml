@@ -119,3 +119,5 @@ repo = 'hrsh7th/nvim-cmp'
 
 [[plugins]]
 repo = 'github/copilot.vim'
+hook_add = '''
+'''

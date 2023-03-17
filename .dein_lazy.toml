@@ -59,21 +59,11 @@ hook_add = '''
         \ 'vars':       'rightbelow 60vnew',
         \ 'stack':      'rightbelow 10new',
   \ }
-
-  " Beautiy
-  let g:go_highlight_types = 1
-  let g:go_highlight_fields = 1
-  let g:go_highlight_functions = 1
-  let g:go_highlight_function_calls = 1
-  let g:go_highlight_operators = 1
-
   " Info
   let g:go_auto_type_info = 1
   set updatetime=100
-
   " Import
   let g:go_fmt_command = "goimports"
-
   " Keybindings
   autocmd FileType go nmap <leader>t <Plug>(go-test)
   autocmd FileType go nmap <leader>T <Plug>(go-test-func)
@@ -83,14 +73,6 @@ hook_add = '''
   autocmd FileType go nmap <leader>db  :GoDebugBreakpoint<CR>
   autocmd FileType go nmap <leader>ds  :GoDebugStop<CR>
   autocmd FileType go nmap <leader>dp  :GoDebugPrint 
-
-  " Linter
-  let g:go_metalinter_enabled = []
-
-  let g:go_metalinter_command = 'golangci-lint'
-  let g:go_metalinter_autosave = 1
-  let g:go_metalinter_autosave_enabled = ['vet','errcheck','staticcheck','unused']
-
 '''
 
 [[plugins]]

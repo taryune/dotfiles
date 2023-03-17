@@ -150,7 +150,6 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 
-
 EOF
 
 " nvim-cmp
