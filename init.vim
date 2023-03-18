@@ -46,6 +46,7 @@ set mouse=a
 set autoread
 au CursorHold * checktime
 let g:tex_conceal=''
+let g:indentLine_setConceal = 0
 
 " Tab settings
 set tabstop=2
