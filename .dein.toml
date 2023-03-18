@@ -71,9 +71,6 @@ hook_add = '''
   nmap <C-w> <Plug>(easymotion-overwin-w)
 '''
 
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
-
 # d2
 [[plugins]]
 repo = 'terrastruct/d2-vim'
@@ -88,14 +85,6 @@ hook_add = '''
 '''
 [[plugins]]
 repo = 'junegunn/fzf.vim'
-
-
-# ale
-[[plugin]]
-repo = 'dense-analysis/ale'
-hook_add = '''
-  let g:ale_disable_lsp = 1
-'''
 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
