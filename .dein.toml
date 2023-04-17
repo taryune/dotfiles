@@ -101,6 +101,11 @@ hook_add = '''
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 
+# lspconfig
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 
@@ -125,3 +130,8 @@ repo = 'hrsh7th/nvim-cmp'
 repo = 'github/copilot.vim'
 hook_add = '''
 '''
+
+[[plugins]]
+repo = 'rmagatti/goto-preview'
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
