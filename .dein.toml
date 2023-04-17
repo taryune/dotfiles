@@ -24,6 +24,18 @@ hook_add = '''
   let g:airline_theme = 'palenight'
 '''
 
+# tmux
+[[plugins]]
+repo = 'christoomey/vim-tmux-navigator'
+hook_add = '''
+  nnoremap <C-J> <C-W>j
+  nnoremap <C-K> <C-W>k
+  nnoremap <C-H> <C-W>h
+  nnoremap <C-L> <C-W>l
+'''
+
+
+
 # yank highlight
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'

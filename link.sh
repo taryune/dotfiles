@@ -1,4 +1,7 @@
 #!/bin/sh
+# install tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.yabairc ~/.yabairc
