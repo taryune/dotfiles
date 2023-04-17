@@ -64,6 +64,8 @@ set shiftwidth=2
   nnoremap sh <C-w>h
   nnoremap sv :<C-u>vs<CR>
   nnoremap sO <C-w>=
+  nnoremap sL :vertical resize +40<CR>
+  nnoremap sH :vertical resize -40<CR>
   "Tab
   nnoremap st :<C-u>tabnew<CR>
   nnoremap sn gt

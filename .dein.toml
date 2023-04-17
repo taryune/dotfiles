@@ -79,8 +79,11 @@ hook_add = '''
 repo = 'Lokaltog/vim-easymotion'
 hook_add = '''
   let g:EasyMotion_smartcase = 1
-  map  <C-w> <Plug>(easymotion-bd-w)
-  nmap <C-w> <Plug>(easymotion-overwin-w)
+  map  <C-f> <Plug>(easymotion-s2)
+  map f <Plug>(easymotion-fl)
+  map t <Plug>(easymotion-tl)
+  map F <Plug>(easymotion-Fl)
+  map T <Plug>(easymotion-Tl)
 '''
 
 # d2
