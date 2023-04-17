@@ -8,11 +8,11 @@ repo = 'Shougo/context_filetype.vim'
 # Colors
 [[plugins]]
 # repo = 'cocopon/iceberg.vim/'
-repo = 'drewtempelmeyer/palenight.vim'
+repo = 'nordtheme/vim'
 hook_add = '''
   set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  colorscheme palenight
+  colorscheme nord
   autocmd ColorScheme * highlight Normal  guibg=None
   autocmd ColorScheme * highlight NonText guibg=None
 '''
@@ -21,7 +21,7 @@ hook_add = '''
 [[plugins]]
 repo    = 'vim-airline/vim-airline'
 hook_add = '''
-  let g:airline_theme = 'palenight'
+  let g:airline_theme = 'nord'
 '''
 
 # tmux
