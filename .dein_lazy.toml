@@ -45,11 +45,6 @@ depends = ['lambdalisue/fern.vim']
 repo = 'dart-lang/dart-vim-plugin'
 on_ft = ['dart']
 
-# rust
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-on_ft = ['rust']
-
 # golang
 [[plugins]]
 repo = 'fatih/vim-go'
