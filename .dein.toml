@@ -7,21 +7,23 @@ repo = 'Shougo/context_filetype.vim'
 
 # Colors
 [[plugins]]
-# repo = 'cocopon/iceberg.vim/'
-repo = 'nordtheme/vim'
+repo =  'catppuccin/nvim'
 hook_add = '''
   set termguicolors
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  colorscheme nord
+  colorscheme catppuccin
+  let g:doom_one_terminal_colors = v:true
   autocmd ColorScheme * highlight Normal  guibg=None
   autocmd ColorScheme * highlight NonText guibg=None
 '''
 
-# airline
+# lightline
 [[plugins]]
-repo    = 'vim-airline/vim-airline'
+repo    = 'itchyny/lightline.vim'
 hook_add = '''
-  let g:airline_theme = 'nord'
+let g:lightline = {
+      \ 'colorscheme': 'catppuccin',
+      \ }
 '''
 
 # tmux
