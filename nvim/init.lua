@@ -7,9 +7,6 @@ vim.cmd("syntax on")
 -- Enable line numbers
 vim.wo.number = true
 
--- Set compatibility mode
-vim.o.nocompatible = true
-
 -- Set clipboard options
 vim.o.clipboard = "unnamed,unnamedplus"
 

@@ -34,6 +34,7 @@ return {
   },
   -- git
  'f-person/git-blame.nvim',
+ 'airblade/vim-gitgutter',
   -- copilot
  'github/copilot.vim',
   -- preview
@@ -41,12 +42,10 @@ return {
  'nvim-telescope/telescope.nvim',
   -- fzf
   {
-  'junegunn/fzf',
-    run = 'fzf#install()',
+    'ibhagwan/fzf-lua',
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      -- Key mappings
-      vim.api.nvim_set_keymap('n', '<C-p>', ':Files<CR>', { noremap = true })
-      vim.api.nvim_set_keymap('n', '<leader><space>', ':Command<CR>', { noremap = true })
+      require('config/fzf')
     end
   },
   -- lsp

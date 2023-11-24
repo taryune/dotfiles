@@ -1,5 +1,5 @@
 vim.api.nvim_set_keymap('n', '<C-e>', ':Fern . -reveal=% -drawer -toggle<CR>', { noremap = true, silent = true })
-vim.g.fern__default_hidden = 1
+vim.g['fern#default_hidden'] = 1
 
 -- Fern custom mappings and settings
 vim.cmd [[
