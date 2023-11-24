@@ -92,6 +92,9 @@ hook_add = '''
   nnoremap <leader>gl :Glog<CR>
   nnoremap <leader>gb :Gblame<CR>
 '''
+[[plugins]]
+repo = 'f-person/git-blame.nvim'
+
 
 # indent
 [[plugins]]

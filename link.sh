@@ -2,9 +2,12 @@
 # install tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+# antigen
+curl -L git.io/antigen > ~/antigen.zsh
 
 ln -sf ~/dotfiles/.alacritty.yml ~/.alacritty.yml
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.yabairc ~/.yabairc
 ln -sf ~/dotfiles/.skhdrc ~/.skhdrc
 ln -sf ~/dotfiles/.dein.toml ~/.dein.toml
