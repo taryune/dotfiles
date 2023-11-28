@@ -7,23 +7,23 @@ return {
     end
   },
   -- lightline
- {
-  'itchyny/lightline.vim',
-  config = function()
-    vim.g.lightline = {
-      colorscheme = 'catppuccin',
-    }
-  end
- },
+  {
+    'itchyny/lightline.vim',
+    config = function()
+      vim.g.lightline = {
+        colorscheme = 'catppuccin',
+      }
+    end
+  },
   -- tmux
   {
-  'christoomey/vim-tmux-navigator',
-  config = function()
-    vim.api.nvim_set_keymap('n', '<C-J>', '<C-W>j', {})
-    vim.api.nvim_set_keymap('n', '<C-K>', '<C-W>k', {})
-    vim.api.nvim_set_keymap('n', '<C-H>', '<C-W>h', {})
-    vim.api.nvim_set_keymap('n', '<C-L>', '<C-W>l', {})
-  end
+    'christoomey/vim-tmux-navigator',
+    config = function()
+      vim.api.nvim_set_keymap('n', '<C-J>', '<C-W>j', {})
+      vim.api.nvim_set_keymap('n', '<C-K>', '<C-W>k', {})
+      vim.api.nvim_set_keymap('n', '<C-H>', '<C-W>h', {})
+      vim.api.nvim_set_keymap('n', '<C-L>', '<C-W>l', {})
+    end
   },
   -- hightlight yank
   {
@@ -33,13 +33,13 @@ return {
     end
   },
   -- git
- 'f-person/git-blame.nvim',
- 'airblade/vim-gitgutter',
+  'f-person/git-blame.nvim',
+  'airblade/vim-gitgutter',
   -- copilot
- 'github/copilot.vim',
+  'github/copilot.vim',
   -- preview
- 'rmagatti/goto-preview',
- 'nvim-telescope/telescope.nvim',
+  'rmagatti/goto-preview',
+  'nvim-telescope/telescope.nvim',
   -- fzf
   {
     'ibhagwan/fzf-lua',
@@ -59,9 +59,9 @@ return {
       require('config/lsp')
     end
   },
--- cmp
+  -- cmp
   {
-   'hrsh7th/nvim-cmp',
+    'hrsh7th/nvim-cmp',
     dependencies = {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
@@ -82,13 +82,18 @@ return {
   },
   --fern
   {
-  'lambdalisue/fern.vim',
+    'lambdalisue/fern.vim',
     dependencies = {
       'lambdalisue/fern-git-status.vim',
-     },
+    },
     config = function()
-     require('config/fern')
+      require('config/fern')
     end
   },
-
+  {
+    'preservim/nerdcommenter',
+    config = function()
+      require('config/nerdcommenter')
+    end
+  },
 }
