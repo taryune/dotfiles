@@ -21,3 +21,22 @@ antigen theme candy
 
 # Apply
 antigen apply
+
+# Alias
+## For Mac
+alias sed='gsed'
+## ls
+alias ls='lsd -l'
+alias la='lsd -la'
+## tmux
+alias ta='tmux attach'
+alias tat='tmux attach -t'
+alias tn='tmux new -s'
+alias tk='tmux kill-session -t'
+alias tks='tmux kill-server'
+alias tl='tmux ls'
+
+# Path
+## Go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
