@@ -3,8 +3,12 @@ return {
   {
     'catppuccin/nvim',
     config = function()
-      vim.cmd [[colorscheme catppuccin]]
+      vim.cmd.colorscheme "catppuccin"
     end
+  },
+  -- transparent
+  {
+    'xiyaowong/nvim-transparent',
   },
   -- lightline
   {
