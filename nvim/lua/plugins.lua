@@ -113,5 +113,12 @@ return {
       "folke/trouble.nvim",
       "nvim-telescope/telescope.nvim"
     }
-  }
+  },
+  --WhichKey
+  {
+    "folke/which-key.nvim",
+    config = function()
+      require("config/which-key")
+    end
+  },
 }
