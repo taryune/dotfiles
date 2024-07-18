@@ -41,7 +41,7 @@ alias tl='tmux ls'
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# pnpm
+## pnpm
 export PNPM_HOME="/Users/taru/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
@@ -49,8 +49,10 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# NVM
+## NVM
 source $(brew --prefix nvm)/nvm.sh
+## cargo
+export PATH=$HOME/.cargo/bin:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/taru/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/taru/google-cloud-sdk/path.zsh.inc'; fi

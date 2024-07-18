@@ -8,7 +8,7 @@ curl -L git.io/antigen > ~/antigen.zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
 # alacritty
-ln -sf ~/dotfiles/.alacritty.yml ~/.alacritty.yml
+ln -sf ~/dotfiles/.alacritty.toml ~/.alacritty.toml
 
 # vim
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
