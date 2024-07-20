@@ -119,6 +119,10 @@ return {
     "folke/which-key.nvim",
     config = function()
       require("config/which-key")
-    end
+    end,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'echasnovski/mini.icons'
+    }
   },
 }
