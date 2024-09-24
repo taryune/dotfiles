@@ -55,5 +55,9 @@ vim.api.nvim_set_keymap('n', 'st', ':<C-u>tabnew<CR>', { noremap = true })
 vim.api.nvim_set_keymap('n', 'sn', 'gt', { noremap = true })
 vim.api.nvim_set_keymap('n', 'sp', 'gT', { noremap = true })
 
+-- Remap
+vim.api.nvim_set_keymap('x', '<leader>r', 'y:%s/<C-r><C-r>"//g<Left><Left>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>r', 'yiw:%s/<C-r><C-r>"//g<Left><Left>', { noremap = true })
+
 -- lazy.nvim
 require('lazy_nvim')
