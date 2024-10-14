@@ -1,9 +1,9 @@
 return {
   -- colorscheme
   {
-    'catppuccin/nvim',
+ 'rebelot/kanagawa.nvim',
     config = function()
-      vim.cmd.colorscheme "catppuccin"
+      vim.cmd.colorscheme 'kanagawa'
     end
   },
   -- transparent
@@ -15,7 +15,7 @@ return {
     'itchyny/lightline.vim',
     config = function()
       vim.g.lightline = {
-        colorscheme = 'catppuccin',
+        colorscheme = 'kanagawa',
       }
     end
   },
@@ -104,9 +104,9 @@ return {
   },
   --WhichKey
   {
-    "folke/which-key.nvim",
+    'folke/which-key.nvim',
     config = function()
-      require("config/which-key")
+      require('config/which-key')
     end,
     dependencies = {
       'nvim-tree/nvim-web-devicons',
@@ -116,7 +116,7 @@ return {
   -- auto pairs
   {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
+    event = 'InsertEnter',
     config = true
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
