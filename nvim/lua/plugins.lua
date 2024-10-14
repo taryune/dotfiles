@@ -100,20 +100,6 @@ return {
       require('config/nerdcommenter')
     end
   },
-  -- ChatGPT
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require('config/chatgpt')
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "folke/trouble.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  },
   --WhichKey
   {
     "folke/which-key.nvim",
