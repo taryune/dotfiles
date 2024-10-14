@@ -56,6 +56,8 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v4.x',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
     },
@@ -111,4 +113,12 @@ return {
       'echasnovski/mini.icons'
     }
   },
+  -- auto pairs
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+  }
 }
