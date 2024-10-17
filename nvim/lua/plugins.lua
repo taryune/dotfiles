@@ -65,6 +65,20 @@ return {
       require('config/lsp')
     end
   },
+  -- lsp signature
+  {
+    'ray-x/lsp_signature.nvim',
+    config = function()
+      require('lsp_signature').setup()
+    end
+  },
+  -- fidget
+  {
+    'j-hui/fidget.nvim',
+    config = function()
+      require('fidget').setup()
+    end
+  },
   -- cmp
   {
     'hrsh7th/nvim-cmp',
@@ -73,6 +87,7 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+      'hrsh7th/vim-vsnip',
     },
     config = function()
       require('config/cmp')
@@ -96,15 +111,10 @@ return {
       require('config/fern')
     end
   },
-  {
-    'preservim/nerdcommenter',
-    config = function()
-      require('config/nerdcommenter')
-    end
-  },
-  --WhichKey
+  -- which-key
   {
     'folke/which-key.nvim',
+    event = 'VeryLazy',
     config = function()
       require('config/which-key')
     end,
@@ -112,6 +122,13 @@ return {
       'nvim-tree/nvim-web-devicons',
       'echasnovski/mini.icons'
     }
+  },
+  -- commenter
+  {
+    'preservim/nerdcommenter',
+    config = function()
+      require('config/nerdcommenter')
+    end
   },
   -- auto pairs
   {

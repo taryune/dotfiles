@@ -59,5 +59,9 @@ vim.api.nvim_set_keymap('n', 'sp', 'gT', { noremap = true })
 vim.api.nvim_set_keymap('x', '<leader>r', 'y:%s/<C-r><C-r>"//g<Left><Left>', { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>r', 'yiw:%s/<C-r><C-r>"//g<Left><Left>', { noremap = true })
 
+
+-- close buffers
+vim.api.nvim_set_keymap('n', 'qq', ':bd<CR>', { noremap = true })
+
 -- lazy.nvim
 require('lazy_nvim')
