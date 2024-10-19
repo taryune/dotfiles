@@ -1,7 +1,7 @@
 return {
   -- colorscheme
   {
- 'rebelot/kanagawa.nvim',
+    'rebelot/kanagawa.nvim',
     config = function()
       vim.cmd.colorscheme 'kanagawa'
     end
@@ -137,5 +137,19 @@ return {
     config = true
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
+  },
+  -- AI
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "hrsh7th/nvim-cmp",                      -- Optional: For using slash commands and variables in the chat buffer
+      "nvim-telescope/telescope.nvim",         -- Optional: For using slash commands
+      { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
+    },
+    config = function()
+      require('config/codecompanion')
+    end
   }
 }
