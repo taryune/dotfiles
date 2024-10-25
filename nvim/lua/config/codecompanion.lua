@@ -36,8 +36,13 @@ require("codecompanion").setup({
           model = {
             default = "deepseek-coder-v2"
           },
+          num_ctx = {
+            default = 16384,
+          },
+          num_predict = {
+            default = -1,
+          },
         },
-
       })
     end,
     openai = function()
@@ -91,11 +96,11 @@ require("codecompanion").setup({
 local wk = require("which-key")
 
 local key_map = {
-  { "<leader>a", group = "CodeCompanion" },
+  { "<leader>a",  group = "CodeCompanion" },
   mode = { "n", "v" },
-  { "<leader>at", "<cmd>lua require('codecompanion').toggle()<CR>", desc = "Toggle CodeCompanion" },
+  { "<leader>at", "<cmd>lua require('codecompanion').toggle()<CR>",         desc = "Toggle CodeCompanion" },
   { "<leader>ae", "<cmd>lua require('codecompanion').prompt('expert')<CR>", desc = "Start chat with an expert" },
-  { "<leader>ac", "<cmd>lua require('codecompanion').chat()<CR>", desc = "Start chat" },
-  { "<leader>aa", "<cmd>lua require('codecompanion').add()<CR>", desc = "Add" },
+  { "<leader>ac", "<cmd>lua require('codecompanion').chat()<CR>",           desc = "Start chat" },
+  { "<leader>aa", "<cmd>lua require('codecompanion').add()<CR>",            desc = "Add" },
 }
 wk.add(key_map)
