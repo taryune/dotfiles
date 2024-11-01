@@ -73,3 +73,9 @@ lsp_zero.format_on_save({
     ['rust_analyzer'] = { 'rust' },
   }
 })
+
+-- Lsp server settings for NixOS
+local lspconfig = require('lspconfig')
+lspconfig.lua_ls.setup{}
+lspconfig.nixd.setup{}
+lspconfig.rust_analyzer.setup{}

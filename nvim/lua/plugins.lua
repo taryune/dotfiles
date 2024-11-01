@@ -3,8 +3,11 @@ return {
   {
     'rebelot/kanagawa.nvim',
     config = function()
-      vim.cmd.colorscheme 'kanagawa'
-    end
+      vim.cmd.colorscheme 'kanagawa-wave'
+    end,
+    opts = {
+      transparent = true,
+    },
   },
   -- transparent
   {
@@ -13,9 +16,12 @@ return {
   -- lightline
   {
     'itchyny/lightline.vim',
+    dependencies = {
+      'shinchu/lightline-gruvbox.vim',
+    },
     config = function()
       vim.g.lightline = {
-        colorscheme = 'kanagawa',
+        colorscheme = 'gruvbox',
       }
     end
   },
