@@ -34,10 +34,10 @@ require("codecompanion").setup({
         },
         schema = {
           model = {
-            default = "deepseek-coder-v2"
+            default = "qwen2.5-coder"
           },
           num_ctx = {
-            default = 16384,
+            default = 10000,
           },
           num_predict = {
             default = -1,
@@ -96,11 +96,11 @@ require("codecompanion").setup({
 local wk = require("which-key")
 
 local key_map = {
-  { "<leader>a",  group = "CodeCompanion" },
+  { "<leader>cm",  group = "CodeCompanion" },
   mode = { "n", "v" },
-  { "<leader>at", "<cmd>lua require('codecompanion').toggle()<CR>",         desc = "Toggle CodeCompanion" },
-  { "<leader>ae", "<cmd>lua require('codecompanion').prompt('expert')<CR>", desc = "Start chat with an expert" },
-  { "<leader>ac", "<cmd>lua require('codecompanion').chat()<CR>",           desc = "Start chat" },
-  { "<leader>aa", "<cmd>lua require('codecompanion').add()<CR>",            desc = "Add" },
+  { "<leader>cmt", "<cmd>lua require('codecompanion').toggle()<CR>",         desc = "Toggle CodeCompanion" },
+  { "<leader>cme", "<cmd>lua require('codecompanion').prompt('expert')<CR>", desc = "Start chat with an expert" },
+  { "<leader>cmc", "<cmd>lua require('codecompanion').chat()<CR>",           desc = "Start chat" },
+  { "<leader>cma", "<cmd>lua require('codecompanion').add()<CR>",            desc = "Add" },
 }
 wk.add(key_map)

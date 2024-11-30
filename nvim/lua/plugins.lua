@@ -46,7 +46,22 @@ return {
   'f-person/git-blame.nvim',
   'airblade/vim-gitgutter',
   -- copilot
-  'github/copilot.vim',
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "github/copilot.vim" },    -- or zbirenbaum/copilot.lua
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    build = "make tiktoken",       -- Only on MacOS or Linux
+    config = function ()
+      require("config/copilot")
+    end,
+    opts = {
+      -- See Configuration section for options
+    },
+    -- See Commands section for default commands if you want to lazy load on them
+  },
   -- preview
   'rmagatti/goto-preview',
   'nvim-telescope/telescope.nvim',
