@@ -3,7 +3,7 @@ return {
   {
     'rebelot/kanagawa.nvim',
     config = function()
-      vim.cmd.colorscheme 'kanagawa-wave'
+      vim.cmd.colorscheme 'kanagawa-dragon'
     end,
     opts = {
       transparent = true,
@@ -48,7 +48,7 @@ return {
   -- copilot
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
+    branch = "main",
     dependencies = {
       { "github/copilot.vim" },    -- or zbirenbaum/copilot.lua
       { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
