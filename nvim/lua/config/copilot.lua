@@ -1,4 +1,11 @@
 require("CopilotChat").setup({
+  chat_autocomplete = false,
+
+  mappings = {
+    complete = {
+      insert = '<Tab>',
+    },
+  },
 })
 
 local wk = require("which-key")
