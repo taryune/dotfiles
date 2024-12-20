@@ -27,6 +27,6 @@ vim.cmd [[
   endfunction
   augroup fern-custom
     autocmd! *
-    autocmd FileType fern call s:init_fern()
+    autocmd FileType fern setlocal norelativenumber | setlocal nonumber | call s:init_fern()
   augroup END
 ]]
