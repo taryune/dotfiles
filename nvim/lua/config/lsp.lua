@@ -71,13 +71,14 @@ lsp_zero.format_on_save({
   servers = {
     ['biome'] = { 'javascript', 'typescript' },
     ['rust_analyzer'] = { 'rust' },
+    ['nixd'] = { 'nix' },
   }
 })
 
 -- Lsp server settings for NixOS
 local lspconfig = require('lspconfig')
-lspconfig.lua_ls.setup{}
-lspconfig.nixd.setup{}
-lspconfig.rust_analyzer.setup{}
-lspconfig.ts_ls.setup{}
-lspconfig.biome.setup{}
+lspconfig.lua_ls.setup {}
+lspconfig.nixd.setup {}
+lspconfig.rust_analyzer.setup {}
+lspconfig.ts_ls.setup {}
+lspconfig.biome.setup {}
