@@ -8,7 +8,7 @@ vim.cmd("syntax on")
 vim.wo.number = true
 
 -- Set clipboard options
-vim.o.clipboard = "unnamed,unnamedplus"
+vim.o.clipboard = "unnamedplus"
 
 -- Enable cursor line
 vim.wo.cursorline = true
