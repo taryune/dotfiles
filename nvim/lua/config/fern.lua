@@ -1,8 +1,8 @@
-vim.api.nvim_set_keymap('n', '<C-e>', ':Fern . -reveal=% -drawer -toggle<CR>', { noremap = true, silent = true })
-vim.g['fern#default_hidden'] = 1
+vim.api.nvim_set_keymap("n", "<C-e>", ":Fern . -reveal=% -drawer -toggle<CR>", { noremap = true, silent = true })
+vim.g["fern#default_hidden"] = 1
 
 -- Fern custom mappings and settings
-vim.cmd [[
+vim.cmd([[
   function! s:init_fern() abort
     " Define NERDTree like mappings
     nmap <buffer> o <Plug>(fern-action-open:edit)
@@ -29,4 +29,4 @@ vim.cmd [[
     autocmd! *
     autocmd FileType fern setlocal norelativenumber | setlocal nonumber | call s:init_fern()
   augroup END
-]]
+]])
