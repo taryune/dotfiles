@@ -4,8 +4,8 @@ cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      vim.fn["vsnip#anonymous"](args.body)     -- For `vsnip` users.
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
       -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
@@ -28,8 +28,8 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "vsnip" }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
+    { name = "vsnip" },   -- For vsnip users.
+    { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
@@ -78,10 +78,10 @@ require("goto-preview").setup({
   references = { -- Configure the telescope UI for slowing the references cycling window.
     telescope = require("telescope.themes").get_dropdown({ hide_preview = false }),
   },
-  focus_on_open = true,                                       -- Focus the floating window when opening it.
-  dismiss_on_move = false,                                    -- Dismiss the floating window when moving the cursor.
-  force_close = true,                                         -- passed into vim.api.nvim_win_close's second argument. See :h nvim_win_close
-  bufhidden = "wipe",                                         -- the bufhidden option to set on the floating window. See :h bufhidden
-  stack_floating_preview_windows = true,                      -- Whether to nest floating windows
+  focus_on_open = true,                                        -- Focus the floating window when opening it.
+  dismiss_on_move = false,                                     -- Dismiss the floating window when moving the cursor.
+  force_close = true,                                          -- passed into vim.api.nvim_win_close's second argument. See :h nvim_win_close
+  bufhidden = "wipe",                                          -- the bufhidden option to set on the floating window. See :h bufhidden
+  stack_floating_preview_windows = true,                       -- Whether to nest floating windows
   preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
 })

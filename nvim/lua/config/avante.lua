@@ -6,10 +6,10 @@ require("avante").setup({
   behaviour = {
     auto_suggestions = true,
   },
-  copilot = {
-    model = "claude-3.7-sonnet",
-  },
-  vendors = {
+  providers = {
+    copilot = {
+      model = "claude-3.7-sonnet",
+    },
     openrouter = {
       __inherited_from = "openai",
       endpoint = "https://openrouter.ai/api/v1",

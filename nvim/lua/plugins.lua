@@ -115,10 +115,20 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/vim-vsnip",
+      "quangnguyen30192/cmp-nvim-tags",
+      "saadparwaiz1/cmp_luasnip"
     },
     config = function()
       require("config/cmp")
     end,
+  },
+  -- LuaSnip
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp"
   },
   -- treesitter
   {
@@ -166,19 +176,6 @@ return {
     -- this is equivalent to setup({}) function
   },
   -- AI
-  -- {
-  -- "olimorris/codecompanion.nvim",
-  -- dependencies = {
-  -- "nvim-lua/plenary.nvim",
-  -- "nvim-treesitter/nvim-treesitter",
-  -- "hrsh7th/nvim-cmp",                      -- Optional: For using slash commands and variables in the chat buffer
-  -- "nvim-telescope/telescope.nvim",         -- Optional: For using slash commands
-  -- { "stevearc/dressing.nvim", opts = {} }, -- Optional: Improves `vim.ui.select`
-  -- },
-  -- config = function()
-  -- require('config/codecompanion')
-  -- end
-  -- },
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
@@ -225,6 +222,13 @@ return {
     },
     config = function()
       require("config/avante")
+    end,
+  },
+  -- supercollider
+  {
+    "davidgranstrom/scnvim",
+    config = function()
+      require("config/scnvim")
     end,
   },
 }
