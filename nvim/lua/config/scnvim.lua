@@ -5,7 +5,7 @@ local map_expr = scnvim.map_expr
 scnvim.setup({
   keymaps = {
     ['<M-e>'] = map('editor.send_line', { 'i', 'n' }),
-    ['<C-r>'] = {
+    ['<C-e>'] = {
       map('editor.send_block', { 'i', 'n' }),
       map('editor.send_selection', 'x'),
     },
@@ -14,11 +14,11 @@ scnvim.setup({
     ['<M-L>'] = map('postwin.clear', { 'n', 'i' }),
     ['<C-k>'] = map('signature.show', { 'n', 'i' }),
     ['<F12>'] = map('sclang.hard_stop', { 'n', 'x', 'i' }),
-    ['<leader>sct'] = map('sclang.start'),
-    ['<leader>scp'] = map('sclang.stop'),
-    ['<leader>scr'] = map('sclang.recompile'),
-    ['<leader>scb'] = map_expr('s.boot'),
-    ['<leader>scl'] = map_expr('s.meter'),
+    ['<leader>st'] = map('sclang.start'),
+    ['<leader>sp'] = map('sclang.stop'),
+    ['<leader>sc'] = map('sclang.recompile'),
+    ['<leader>sb'] = map_expr('s.boot'),
+    ['<leader>sl'] = map_expr('s.meter'),
   },
   editor = {
     highlight = {

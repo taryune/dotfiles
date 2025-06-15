@@ -58,9 +58,7 @@ return {
       require("config/copilot")
     end,
     opts = {
-      -- See Configuration section for options
     },
-    -- See Commands section for default commands if you want to lazy load on them
   },
   -- preview
   "rmagatti/goto-preview",
@@ -139,14 +137,23 @@ return {
     end,
   },
   --fern
+  -- {
+  -- "lambdalisue/fern.vim",
+  -- dependencies = {
+  -- "lambdalisue/fern-git-status.vim",
+  -- },
+  -- config = function()
+  -- require("config/fern")
+  -- end,
+  -- },
+  -- yazi
   {
-    "lambdalisue/fern.vim",
+    "mikavilpas/yazi.nvim",
     dependencies = {
-      "lambdalisue/fern-git-status.vim",
+      -- check the installation instructions at
+      -- https://github.com/folke/snacks.nvim
+      "folke/snacks.nvim"
     },
-    config = function()
-      require("config/fern")
-    end,
   },
   -- which-key
   {
@@ -175,7 +182,7 @@ return {
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
-  -- AI
+  -- LLM
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
@@ -230,5 +237,9 @@ return {
     config = function()
       require("config/scnvim")
     end,
+  },
+  -- tidal
+  {
+    "tidalcycles/vim-tidal",
   },
 }
