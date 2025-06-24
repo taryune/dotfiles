@@ -1,13 +1,28 @@
 return {
   -- colorscheme
+  -- {
+  -- "rebelot/kanagawa.nvim",
+  -- config = function()
+  -- vim.cmd.colorscheme("kanagawa-dragon")
+  -- end,
+  -- opts = {
+  -- transparent = true,
+  -- },
+  -- },
+  -- {
+  -- "rose-pine/neovim",
+  -- name = "rose-pine",
+  -- config = function()
+  -- vim.cmd("colorscheme rose-pine-dawn")
+  -- end
+  -- },
   {
-    "rebelot/kanagawa.nvim",
+    "EdenEast/nightfox.nvim"
+    ,
+    name = "nightfox",
     config = function()
-      vim.cmd.colorscheme("kanagawa-dragon")
-    end,
-    opts = {
-      transparent = true,
-    },
+      vim.cmd("colorscheme dawnfox")
+    end
   },
   -- transparent
   {
@@ -21,7 +36,7 @@ return {
     },
     config = function()
       vim.g.lightline = {
-        colorscheme = "gruvbox",
+        colorscheme = "dawnfox",
       }
     end,
   },
@@ -137,15 +152,15 @@ return {
     end,
   },
   --fern
-  -- {
-  -- "lambdalisue/fern.vim",
-  -- dependencies = {
-  -- "lambdalisue/fern-git-status.vim",
-  -- },
-  -- config = function()
-  -- require("config/fern")
-  -- end,
-  -- },
+  {
+    "lambdalisue/fern.vim",
+    dependencies = {
+      "lambdalisue/fern-git-status.vim",
+    },
+    config = function()
+      require("config/fern")
+    end,
+  },
   -- yazi
   {
     "mikavilpas/yazi.nvim",
