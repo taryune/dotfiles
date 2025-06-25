@@ -21,7 +21,7 @@ return {
     ,
     name = "nightfox",
     config = function()
-      vim.cmd("colorscheme dawnfox")
+      vim.cmd("colorscheme dayfox")
     end
   },
   -- transparent
@@ -36,7 +36,7 @@ return {
     },
     config = function()
       vim.g.lightline = {
-        colorscheme = "dawnfox",
+        colorscheme = "dayfox",
       }
     end,
   },
