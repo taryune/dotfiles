@@ -32,4 +32,4 @@ scnvim.setup({
   },
 })
 -- Load snippets for SuperCollider
-require("luasnip").add_snippets("supercollider", require("scnvim/utils").get_snippets())
+--- require("luasnip").add_snippets("supercollider", require("scnvim/utils").get_snippets())

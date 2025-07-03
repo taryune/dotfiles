@@ -21,7 +21,7 @@ return {
     ,
     name = "nightfox",
     config = function()
-      vim.cmd("colorscheme dayfox")
+      vim.cmd("colorscheme terafox")
     end
   },
   -- {
@@ -44,7 +44,7 @@ return {
     },
     config = function()
       vim.g.lightline = {
-        colorscheme = "dayfox",
+        colorscheme = "terafox",
       }
     end,
   },
