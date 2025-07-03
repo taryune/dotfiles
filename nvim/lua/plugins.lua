@@ -1,21 +1,5 @@
 return {
   -- colorscheme
-  -- {
-  -- "rebelot/kanagawa.nvim",
-  -- config = function()
-  -- vim.cmd.colorscheme("kanagawa-dragon")
-  -- end,
-  -- opts = {
-  -- transparent = true,
-  -- },
-  -- },
-  -- {
-  -- "rose-pine/neovim",
-  -- name = "rose-pine",
-  -- config = function()
-  -- vim.cmd("colorscheme rose-pine-dawn")
-  -- end
-  -- },
   {
     "EdenEast/nightfox.nvim"
     ,
@@ -30,7 +14,6 @@ return {
   -- config = function()
   -- vim.cmd("colorscheme zenbones")
   -- end
-  --
   -- },
   -- transparent
   {
@@ -135,7 +118,7 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-      "hrsh7th/vim-vsnip",
+      -- "hrsh7th/vim-vsnip",
       "quangnguyen30192/cmp-nvim-tags",
       "saadparwaiz1/cmp_luasnip"
     },
@@ -146,9 +129,7 @@ return {
   -- LuaSnip
   {
     "L3MON4D3/LuaSnip",
-    -- follow latest release.
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    -- install jsregexp (optional!).
     build = "make install_jsregexp"
   },
   -- treesitter
