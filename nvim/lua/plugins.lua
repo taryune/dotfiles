@@ -5,16 +5,16 @@ return {
     ,
     name = "nightfox",
     config = function()
-      vim.cmd("colorscheme terafox")
+      -- vim.cmd("colorscheme carbonfox")
     end
   },
-  -- {
-  -- "zenbones-theme/zenbones.nvim",
-  -- dependencies = "rktjmp/lush.nvim",
-  -- config = function()
-  -- vim.cmd("colorscheme zenbones")
-  -- end
-  -- },
+  {
+    "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
+    config = function()
+      vim.cmd("colorscheme zenbones")
+    end
+  },
   -- transparent
   {
     "xiyaowong/nvim-transparent",
@@ -27,7 +27,7 @@ return {
     },
     config = function()
       vim.g.lightline = {
-        colorscheme = "terafox",
+        colorscheme = "zenbones",
       }
     end,
   },
