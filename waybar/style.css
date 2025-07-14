@@ -1,0 +1,12 @@
+* {
+  font-family: "DepartureMono Nerd Font";
+  font-size: 12pt;
+}
+window#waybar {
+  background: rgba(53, 53, 53, 0);
+  color: #7aa4a1;
+}
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0 3px;
+    margin: 4 4px;
+}
