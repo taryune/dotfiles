@@ -4,9 +4,9 @@ vim.opt.signcolumn = "yes"
 
 -- Add cmp_nvim_lsp capabilities settings to lspconfig
 -- This should be executed before you configure any language server
-local lspconfig_defaults = require("lspconfig").util.default_config
-lspconfig_defaults.capabilities =
-    vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
+-- local lspconfig_defaults = require("lspconfig").util.default_config
+-- lspconfig_defaults.capabilities =
+-- vim.tbl_deep_extend("force", lspconfig_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
@@ -63,21 +63,28 @@ lsp.format_on_save({
     ["gopls"] = { "go" },
   },
 })
-
 -- Lsp server settings
-local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({})
-lspconfig.nixd.setup({})
-lspconfig.rust_analyzer.setup({})
-lspconfig.ts_ls.setup({})
-lspconfig.biome.setup({})
-lspconfig.gopls.setup({})
-lsp.use("solidity", {
-  cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
-  filetypes = { "solidity" },
-  root_dir = require("lspconfig.util").find_git_ancestor,
-  single_file_support = true,
-})
+-- local lspconfig = require("lspconfig")
+-- lspconfig.lua_ls.setup({})
+-- lspconfig.nixd.setup({})
+-- lspconfig.rust_analyzer.setup({})
+-- lspconfig.ts_ls.setup({})
+-- lspconfig.biome.setup({})
+-- lspconfig.gopls.setup({})
+-- lsp.use("solidity", {
+-- cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
+-- filetypes = { "solidity" },
+-- root_dir = require("lspconfig.util").find_git_ancestor,
+-- single_file_support = true,
+-- })
+
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('nixd')
+vim.lsp.enable('rust_analyzer')
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('biome')
+vim.lsp.enable('gopls')
+vim.lsp.enable('solidity')
 
 -- null-ls
 local null_ls = require("null-ls")
