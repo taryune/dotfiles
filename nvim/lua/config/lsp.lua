@@ -60,6 +60,7 @@ lsp.format_on_save({
     ["nixd"] = { "nix" },
     ["biome"] = { "javascript", "typescript" },
     ["rust_analyzer"] = { "rust" },
+    ["gopls"] = { "go" },
   },
 })
 
@@ -70,6 +71,7 @@ lspconfig.nixd.setup({})
 lspconfig.rust_analyzer.setup({})
 lspconfig.ts_ls.setup({})
 lspconfig.biome.setup({})
+lspconfig.gopls.setup({})
 lsp.use("solidity", {
   cmd = { "nomicfoundation-solidity-language-server", "--stdio" },
   filetypes = { "solidity" },
