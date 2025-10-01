@@ -8,7 +8,7 @@ require("avante").setup({
   },
   providers = {
     copilot = {
-      model = "claude-sonnet-4-20250514",
+      model = "claude-sonnet-4",
     },
     openrouter = {
       __inherited_from = "openai",

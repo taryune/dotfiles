@@ -52,20 +52,20 @@ return {
   "f-person/git-blame.nvim",
   "airblade/vim-gitgutter",
   -- copilot
-  -- {
-  -- "CopilotC-Nvim/CopilotChat.nvim",
-  -- branch = "main",
-  -- dependencies = {
-  -- { "github/copilot.vim" },    -- or zbirenbaum/copilot.lua
-  -- { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-  -- },
-  -- build = "make tiktoken",       -- Only on MacOS or Linux
-  -- config = function()
-  -- require("config/copilot")
-  -- end,
-  -- opts = {
-  -- },
-  -- },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "main",
+    dependencies = {
+      { "github/copilot.vim" },    -- or zbirenbaum/copilot.lua
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    build = "make tiktoken",       -- Only on MacOS or Linux
+    config = function()
+      require("config/copilot")
+    end,
+    opts = {
+    },
+  },
   -- preview
   "rmagatti/goto-preview",
   "nvim-telescope/telescope.nvim",
