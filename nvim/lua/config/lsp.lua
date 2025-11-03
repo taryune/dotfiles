@@ -85,6 +85,7 @@ vim.lsp.enable('ts_ls')
 vim.lsp.enable('biome')
 vim.lsp.enable('gopls')
 vim.lsp.enable('solidity')
+vim.lsp.enable('ltex')
 
 -- null-ls
 local null_ls = require("null-ls")
