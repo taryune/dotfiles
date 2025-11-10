@@ -12,7 +12,7 @@ return {
     "zenbones-theme/zenbones.nvim",
     dependencies = "rktjmp/lush.nvim",
     config = function()
-      vim.cmd("colorscheme zenbones")
+      vim.cmd("colorscheme forestbones")
     end
   },
   -- transparent
@@ -27,7 +27,7 @@ return {
     },
     config = function()
       vim.g.lightline = {
-        colorscheme = "zenbones",
+        colorscheme = "forestbones",
       }
     end,
   },
