@@ -6,6 +6,7 @@ vim.cmd("syntax on")
 
 -- Enable line numbers
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Set clipboard options
 vim.o.clipboard = "unnamedplus"

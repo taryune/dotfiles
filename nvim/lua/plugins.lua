@@ -1,13 +1,13 @@
 return {
   -- colorscheme
-  {
-    "EdenEast/nightfox.nvim"
-    ,
-    name = "nightfox",
-    config = function()
-      -- vim.cmd("colorscheme carbonfox")
-    end
-  },
+  -- {
+  -- "EdenEast/nightfox.nvim"
+  -- ,
+  -- name = "nightfox",
+  -- config = function()
+  -- vim.cmd("colorscheme carbonfox")
+  -- end
+  -- },
   {
     "zenbones-theme/zenbones.nvim",
     dependencies = "rktjmp/lush.nvim",
@@ -16,9 +16,9 @@ return {
     end
   },
   -- transparent
-  {
-    "xiyaowong/nvim-transparent",
-  },
+  -- {
+  -- "xiyaowong/nvim-transparent",
+  -- },
   -- lightline
   {
     "itchyny/lightline.vim",
@@ -51,21 +51,6 @@ return {
   -- git
   "f-person/git-blame.nvim",
   "airblade/vim-gitgutter",
-  -- copilot
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "main",
-    dependencies = {
-      { "github/copilot.vim" },    -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-    },
-    build = "make tiktoken",       -- Only on MacOS or Linux
-    config = function()
-      require("config/copilot")
-    end,
-    opts = {
-    },
-  },
   -- preview
   "rmagatti/goto-preview",
   "nvim-telescope/telescope.nvim",
@@ -140,16 +125,6 @@ return {
       require("config/treesitter")
     end,
   },
-  --fern
-  {
-    "lambdalisue/fern.vim",
-    dependencies = {
-      "lambdalisue/fern-git-status.vim",
-    },
-    config = function()
-      require("config/fern")
-    end,
-  },
   -- yazi
   {
     "mikavilpas/yazi.nvim",
@@ -158,6 +133,19 @@ return {
       -- https://github.com/folke/snacks.nvim
       "folke/snacks.nvim"
     },
+  },
+  -- oil
+  {
+    "stevearc/oil.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    config = function()
+      require("config/oil")
+    end,
+    lazy = false,
   },
   -- which-key
   {
@@ -186,49 +174,6 @@ return {
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
-  -- LLM
-  -- {
-  -- "yetone/avante.nvim",
-  -- event = "VeryLazy",
-  -- version = "*", -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
-  -- build = "make",
-  -- dependencies = {
-  -- "nvim-treesitter/nvim-treesitter",
-  -- "stevearc/dressing.nvim",
-  -- "nvim-lua/plenary.nvim",
-  -- "MunifTanjim/nui.nvim",
-  -- "echasnovski/mini.pick",         -- for file_selector provider mini.pick
-  -- "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-  -- "hrsh7th/nvim-cmp",              -- autocompletion for avante commands and mentions
-  -- "ibhagwan/fzf-lua",              -- for file_selector provider fzf
-  -- "nvim-tree/nvim-web-devicons",   -- or echasnovski/mini.icons
-  -- "zbirenbaum/copilot.lua",        -- for providers='copilot'
-  -- {
-  -- "HakonHarnes/img-clip.nvim",
-  -- event = "VeryLazy",
-  -- opts = {
-  -- default = {
-  -- embed_image_as_base64 = false,
-  -- prompt_for_file_name = false,
-  -- drag_and_drop = {
-  -- insert_mode = true,
-  -- },
-  -- use_absolute_path = true,
-  -- },
-  -- },
-  -- },
-  -- {
-  -- "MeanderingProgrammer/render-markdown.nvim",
-  -- opts = {
-  -- file_types = { "markdown", "Avante" },
-  -- },
-  -- ft = { "markdown", "Avante" },
-  -- },
-  -- },
-  -- config = function()
-  -- require("config/avante")
-  -- end,
-  -- },
   -- supercollider
   {
     "davidgranstrom/scnvim",
