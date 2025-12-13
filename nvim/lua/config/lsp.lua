@@ -61,6 +61,7 @@ lsp.format_on_save({
     ["biome"] = { "javascript", "typescript" },
     ["rust_analyzer"] = { "rust" },
     ["gopls"] = { "go" },
+    ["hls"] = { "haskell", 'lhaskell', 'cabal' },
     -- ["ltex"] = { "latex" },
   },
 })
@@ -85,7 +86,8 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('biome')
 vim.lsp.enable('gopls')
-vim.lsp.enable('solidity')
+vim.lsp.enable('hls')
+-- vim.lsp.enable('solidity')
 -- vim.lsp.enable('ltex')
 
 -- null-ls
