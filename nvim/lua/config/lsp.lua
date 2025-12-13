@@ -42,6 +42,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<space>f", function()
       vim.lsp.buf.format({ async = true })
     end, opts)
+
+    -- Attach lsp_signature only for filetypes that support signature help
+    if vim.bo[ev.buf].filetype ~= "cabal" then
+      require("lsp_signature").on_attach({}, ev.buf)
+    end
   end,
 })
 
@@ -86,7 +91,32 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('ts_ls')
 vim.lsp.enable('biome')
 vim.lsp.enable('gopls')
+
+-- Haskell
 vim.lsp.enable('hls')
+-- HLS for Haskell files (snippets enabled by default)
+vim.lsp.config('hls', {
+  filetypes = { 'haskell', 'lhaskell' },
+})
+vim.lsp.enable('hls')
+-- HLS for Cabal files (snippets disabled)
+vim.lsp.config('hls_cabal', {
+  cmd = { 'haskell-language-server-wrapper', '--lsp' },
+  filetypes = { 'cabal' },
+  settings = {
+    haskell = {
+      plugin = {
+        ["ghcide-completions"] = {
+          config = {
+            snippetsOn = false,
+          }
+        }
+      }
+    }
+  }
+})
+vim.lsp.enable('hls_cabal')
+
 -- vim.lsp.enable('solidity')
 -- vim.lsp.enable('ltex')
 

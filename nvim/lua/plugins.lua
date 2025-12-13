@@ -84,9 +84,7 @@ return {
   -- lsp signature
   {
     "ray-x/lsp_signature.nvim",
-    config = function()
-      require("lsp_signature").setup()
-    end,
+    event = "LspAttach",
   },
   -- fidget
   {
