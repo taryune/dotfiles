@@ -105,7 +105,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
       { "<leader>lD", vim.lsp.buf.type_definition, desc = "Type definition",  buffer = ev.buf },
       { "<leader>lr", vim.lsp.buf.references,      desc = "References",       buffer = ev.buf },
       { "<leader>ln", vim.lsp.buf.rename,          desc = "Rename",           buffer = ev.buf },
-      { "<leader>la", vim.lsp.buf.code_action,     desc = "Code action",      buffer = ev.buf, mode = { "n", "v" } },
+      {
+        "<leader>la",
+        vim.lsp.buf.code_action,
+        desc = "Code action",
+        buffer = ev.buf,
+        mode = { "n", "v" },
+      },
       {
         "<leader>lf",
         function()
@@ -133,5 +139,49 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
     -- Also set <C-k> for signature help (standard LSP binding)
     map("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+  end,
+})
+
+-- Haskell keymaps (haskell-tools.nvim)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "haskell", "lhaskell", "cabal" },
+  group = vim.api.nvim_create_augroup("UserHaskellKeymaps", {}),
+  callback = function(ev)
+    local ht = require("haskell-tools")
+
+    wk.add({
+      -- <leader>h = Haskell
+      { "<leader>h",   group = "haskell",          buffer = ev.buf },
+
+      -- LSP extensions (under <leader>l for consistency)
+      { "<leader>lc",  vim.lsp.codelens.run,       desc = "Run codelens",          buffer = ev.buf },
+      { "<leader>lC",  vim.lsp.codelens.refresh,   desc = "Refresh codelens",      buffer = ev.buf },
+
+      -- Hoogle
+      { "<leader>hs",  ht.hoogle.hoogle_signature, desc = "Hoogle signature",      buffer = ev.buf },
+
+      -- Eval
+      { "<leader>he",  ht.lsp.buf_eval_all,        desc = "Eval all snippets",     buffer = ev.buf },
+
+      -- REPL
+      { "<leader>hr",  group = "repl",             buffer = ev.buf },
+      { "<leader>hrt", ht.repl.toggle,             desc = "Toggle REPL (project)", buffer = ev.buf },
+      {
+        "<leader>hrf",
+        function()
+          ht.repl.toggle(vim.api.nvim_buf_get_name(0))
+        end,
+        desc = "Toggle REPL (buffer)",
+        buffer = ev.buf,
+      },
+      { "<leader>hrq", ht.repl.quit,                  desc = "Quit REPL",         buffer = ev.buf },
+      { "<leader>hrl", ht.repl.reload,                desc = "Reload REPL",       buffer = ev.buf },
+
+      -- Project files
+      { "<leader>hp",  group = "project",             buffer = ev.buf },
+      { "<leader>hpc", ht.project.open_package_cabal, desc = "Open .cabal file",  buffer = ev.buf },
+      { "<leader>hpy", ht.project.open_package_yaml,  desc = "Open package.yaml", buffer = ev.buf },
+      { "<leader>hpp", ht.project.open_project_file,  desc = "Open project file", buffer = ev.buf },
+    })
   end,
 })

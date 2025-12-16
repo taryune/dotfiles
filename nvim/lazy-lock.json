@@ -10,6 +10,7 @@
   "fzf-lua": { "branch": "main", "commit": "bd69cbae60eeb4589fbd285cb112265530fe1a5e" },
   "git-blame.nvim": { "branch": "master", "commit": "9874ec1ec8bc53beb33b7cd82c092b85271a578b" },
   "goto-preview": { "branch": "main", "commit": "cf561d10b4b104db20375c48b86cf36af9f96e00" },
+  "haskell-tools.nvim": { "branch": "master", "commit": "5fb8eda3c4430cb1d473d3e2138b070bdca1c224" },
   "lazy.nvim": { "branch": "main", "commit": "85c7ff3711b730b4030d03144f6db6375044ae82" },
   "lightline-gruvbox.vim": { "branch": "master", "commit": "d233416d566e61f879bd19d9d498b01b1b7e336c" },
   "lightline.vim": { "branch": "master", "commit": "e358557e1a9f9fc860416c8eb2e34c0404078155" },

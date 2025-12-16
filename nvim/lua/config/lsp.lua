@@ -14,7 +14,7 @@ lsp.format_on_save({
     ["biome"] = { "javascript", "typescript" },
     ["rust_analyzer"] = { "rust" },
     ["gopls"] = { "go" },
-    ["hls"] = { "haskell", "lhaskell", "cabal" },
+    -- ["hls"] = { "haskell", "lhaskell", "cabal" },
   },
 })
 
@@ -26,29 +26,7 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("biome")
 vim.lsp.enable("gopls")
 
--- Haskell
-vim.lsp.enable("hls")
-vim.lsp.config("hls", {
-  filetypes = { "haskell", "lhaskell" },
-})
-
--- HLS for Cabal files (snippets disabled)
-vim.lsp.config("hls_cabal", {
-  cmd = { "haskell-language-server-wrapper", "--lsp" },
-  filetypes = { "cabal" },
-  settings = {
-    haskell = {
-      plugin = {
-        ["ghcide-completions"] = {
-          config = {
-            snippetsOn = false,
-          },
-        },
-      },
-    },
-  },
-})
-vim.lsp.enable("hls_cabal")
+-- Haskell: managed by haskell-tools.nvim (see plugins/language.lua)
 
 -- null-ls
 local null_ls = require("null-ls")
