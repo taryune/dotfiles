@@ -24,6 +24,9 @@ return {
   -- telescope
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
   -- yazi
   {

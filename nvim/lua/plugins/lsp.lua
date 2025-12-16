@@ -48,4 +48,15 @@ return {
     version = "v2.*",
     build = "make install_jsregexp",
   },
+  -- Haskell snippets
+  {
+    "mrcjkb/haskell-snippets.nvim",
+    ft = { "haskell", "lhaskell", "cabal" },
+    dependencies = { "L3MON4D3/LuaSnip" },
+    config = function()
+      local ls = require("luasnip")
+      local haskell_snippets = require("haskell-snippets").all
+      ls.add_snippets("haskell", haskell_snippets, { key = "haskell" })
+    end,
+  },
 }

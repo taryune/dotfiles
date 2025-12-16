@@ -14,7 +14,7 @@ lsp.format_on_save({
     ["biome"] = { "javascript", "typescript" },
     ["rust_analyzer"] = { "rust" },
     ["gopls"] = { "go" },
-    -- ["hls"] = { "haskell", "lhaskell", "cabal" },
+    ["hls"] = { "haskell", "lhaskell", "cabal" },
   },
 })
 

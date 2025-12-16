@@ -151,37 +151,49 @@ vim.api.nvim_create_autocmd("FileType", {
 
     wk.add({
       -- <leader>h = Haskell
-      { "<leader>h",   group = "haskell",          buffer = ev.buf },
+      { "<leader>h",   group = "haskell",             buffer = ev.buf },
 
       -- LSP extensions (under <leader>l for consistency)
-      { "<leader>lc",  vim.lsp.codelens.run,       desc = "Run codelens",          buffer = ev.buf },
-      { "<leader>lC",  vim.lsp.codelens.refresh,   desc = "Refresh codelens",      buffer = ev.buf },
+      { "<leader>lc",  vim.lsp.codelens.run,          desc = "Run codelens",              buffer = ev.buf },
+      { "<leader>lC",  vim.lsp.codelens.refresh,      desc = "Refresh codelens",          buffer = ev.buf },
 
       -- Hoogle
-      { "<leader>hs",  ht.hoogle.hoogle_signature, desc = "Hoogle signature",      buffer = ev.buf },
-
+      { "<leader>hs",  ht.hoogle.hoogle_signature,    desc = "Hoogle signature",          buffer = ev.buf },
+      { "<leader>hh",  "<cmd>Telescope hoogle<cr>",   desc = "Hoogle search (Telescope)", buffer = ev.buf },
       -- Eval
-      { "<leader>he",  ht.lsp.buf_eval_all,        desc = "Eval all snippets",     buffer = ev.buf },
+      { "<leader>he",  ht.lsp.buf_eval_all,           desc = "Eval all snippets",         buffer = ev.buf },
 
       -- REPL
-      { "<leader>hr",  group = "repl",             buffer = ev.buf },
-      { "<leader>hrt", ht.repl.toggle,             desc = "Toggle REPL (project)", buffer = ev.buf },
-      {
-        "<leader>hrf",
-        function()
-          ht.repl.toggle(vim.api.nvim_buf_get_name(0))
-        end,
-        desc = "Toggle REPL (buffer)",
-        buffer = ev.buf,
-      },
-      { "<leader>hrq", ht.repl.quit,                  desc = "Quit REPL",         buffer = ev.buf },
-      { "<leader>hrl", ht.repl.reload,                desc = "Reload REPL",       buffer = ev.buf },
+      { "<leader>hr",  ht.repl.toggle,                desc = "Toggle REPL",               buffer = ev.buf },
+      { "<leader>hq",  ht.repl.quit,                  desc = "Quit REPL",                 buffer = ev.buf },
 
       -- Project files
       { "<leader>hp",  group = "project",             buffer = ev.buf },
-      { "<leader>hpc", ht.project.open_package_cabal, desc = "Open .cabal file",  buffer = ev.buf },
-      { "<leader>hpy", ht.project.open_package_yaml,  desc = "Open package.yaml", buffer = ev.buf },
-      { "<leader>hpp", ht.project.open_project_file,  desc = "Open project file", buffer = ev.buf },
+      { "<leader>hpc", ht.project.open_package_cabal, desc = "Open .cabal file",          buffer = ev.buf },
+      { "<leader>hpy", ht.project.open_package_yaml,  desc = "Open package.yaml",         buffer = ev.buf },
+      { "<leader>hpp", ht.project.open_project_file,  desc = "Open project file",         buffer = ev.buf },
     })
+  end,
+})
+
+-- Haskell REPL terminal keymaps
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("UserHaskellReplKeymaps", {}),
+  callback = function(ev)
+    -- Exit terminal mode with Esc
+    map("t", "<Esc>", [[<C-\><C-n>]], { buffer = ev.buf, desc = "Exit terminal mode" })
+
+    -- Check if this is a ghci/cabal repl terminal
+    local bufname = vim.api.nvim_buf_get_name(ev.buf)
+    if bufname:match("ghci") or bufname:match("cabal") then
+      local ht = require("haskell-tools")
+      map("t", "<C-r>", function()
+        ht.repl.reload()
+      end, { buffer = ev.buf, desc = "Reload REPL" })
+
+      -- Move REPL to bottom horizontal split and resize
+      vim.cmd("wincmd J")
+      vim.cmd("resize 15")
+    end
   end,
 })
