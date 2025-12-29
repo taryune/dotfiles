@@ -18,7 +18,7 @@ require("oil").setup({
     conceallevel = 3,
     concealcursor = "nvic",
   },
-  delete_to_trash = false,
+  delete_to_trash = true,
   skip_confirm_for_simple_edits = false,
   prompt_save_on_select_new_entry = true,
   cleanup_delay_ms = 2000,
@@ -59,7 +59,7 @@ require("oil").setup({
   },
   use_default_keymaps = true,
   view_options = {
-    show_hidden = false,
+    show_hidden = true,
     is_hidden_file = function(name, _)
       local m = name:match("^%.")
       return m ~= nil
