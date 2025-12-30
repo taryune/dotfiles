@@ -48,6 +48,7 @@ wk.add({
   { "<leader>f",  group = "find" },
   { "<leader>ff", "<cmd>lua require('fzf-lua').files()<CR>", desc = "Find files" },
   { "<leader>fg", "<cmd>lua require('fzf-lua').grep()<CR>",  desc = "Grep" },
+  { "<leader>fl", "<cmd>Yazi toggle<CR>",                    desc = "Browse Files" },
 
   -- <leader>r = Replace
   { "<leader>r",  group = "replace" },
@@ -66,12 +67,14 @@ wk.add({
 
   -- <leader>l = LSP
   { "<leader>l",  group = "LSP" },
-  { "<leader>le", vim.diagnostic.open_float, desc = "Open diagnostic float" },
-  { "<leader>lq", vim.diagnostic.setloclist, desc = "Diagnostic loclist" },
+  { "<leader>le", vim.diagnostic.open_float,              desc = "Open diagnostic float" },
+  { "<leader>lq", vim.diagnostic.setloclist,              desc = "Diagnostic loclist" },
 
   -- <leader>g = Git
   { "<leader>g",  group = "git" },
-  { "<leader>gb", "<cmd>GitBlameToggle<cr>", desc = "Toggle git blame" },
+  { "<leader>gb", "<cmd>GitBlameToggle<cr>",              desc = "Toggle git blame" },
+  { "<leader>gg", "<cmd>Neogit kind=split_below_all<cr>", desc = "Show Neogit UI" },
+
 
   -- <leader>c = Comments (NERDCommenter)
   { "<leader>c",  group = "comments" },
@@ -81,9 +84,9 @@ wk.add({
 
   -- <leader>t = Tabs
   { "<leader>t",  group = "tabs" },
-  { "<leader>tn", "gt",                      desc = "Next tab" },
-  { "<leader>tp", "gT",                      desc = "Prev tab" },
-  { "<leader>tt", ":<C-u>tabnew<CR>",        desc = "New tab" },
+  { "<leader>tn", "gt",                                   desc = "Next tab" },
+  { "<leader>tp", "gT",                                   desc = "Prev tab" },
+  { "<leader>tt", ":<C-u>tabnew<CR>",                     desc = "New tab" },
 })
 
 -- Diagnostic navigation (outside which-key for [ and ] prefixes)

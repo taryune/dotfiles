@@ -3,17 +3,11 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "VonHeikemen/lsp-zero.nvim",
       "nvim-lua/plenary.nvim",
     },
     config = function()
       require("config.lsp")
     end,
-  },
-  -- null-ls
-  {
-    "nvimtools/none-ls.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
   },
   -- lsp signature
   {

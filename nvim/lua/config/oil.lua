@@ -28,7 +28,7 @@ require("oil").setup({
     autosave_changes = false,
   },
   constrain_cursor = "editable",
-  watch_for_changes = false,
+  watch_for_changes = true,
   keymaps = {
     ["g?"] = { "actions.show_help", mode = "n" },
     ["<CR>"] = "actions.select",
