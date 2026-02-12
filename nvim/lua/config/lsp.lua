@@ -7,6 +7,7 @@ vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("biome")
 vim.lsp.enable("gopls")
+vim.lsp.enable('solidity_ls')
 -- vim.lsp.enable("hls")
 
 -- Attach lsp_signature on LspAttach
@@ -24,12 +25,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("lsp", { clear = true }),
   callback = function(args)
-    -- 2
     vim.api.nvim_create_autocmd("BufWritePre", {
-      -- 3
       buffer = args.buf,
       callback = function()
-        -- 4 + 5
+        -- Use unified LSP formatting (none-ls provides forge fmt for Solidity)
         vim.lsp.buf.format({ async = false, id = args.data.client_id })
       end,
     })

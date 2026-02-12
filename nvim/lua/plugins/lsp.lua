@@ -21,6 +21,16 @@ return {
       require("fidget").setup()
     end,
   },
+  -- none-ls (null-ls fork for formatters/linters)
+  {
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("config.none-ls")
+    end,
+  },
   -- cmp
   {
     "hrsh7th/nvim-cmp",
