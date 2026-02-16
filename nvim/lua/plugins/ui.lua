@@ -4,7 +4,7 @@ return {
     "zenbones-theme/zenbones.nvim",
     dependencies = "rktjmp/lush.nvim",
     config = function()
-      vim.cmd("colorscheme neobones")
+      vim.cmd("colorscheme kanagawabones")
     end,
   },
   -- lightline
@@ -15,7 +15,7 @@ return {
     },
     config = function()
       vim.g.lightline = {
-        colorscheme = "neobones",
+        colorscheme = "kanagawabones",
       }
     end,
   },
