@@ -8,6 +8,7 @@ vim.lsp.enable("ts_ls")
 vim.lsp.enable("biome")
 vim.lsp.enable("gopls")
 vim.lsp.enable('solidity_ls')
+vim.lsp.enable('guile_ls')
 -- vim.lsp.enable("hls")
 
 -- Attach lsp_signature on LspAttach

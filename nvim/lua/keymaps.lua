@@ -87,6 +87,10 @@ wk.add({
   { "<leader>tn", "gt",                                   desc = "Next tab" },
   { "<leader>tp", "gT",                                   desc = "Prev tab" },
   { "<leader>tt", ":<C-u>tabnew<CR>",                     desc = "New tab" },
+
+  -- <leader>u = undo
+  { "<leader>u",  "<cmd>Telescope undo<cr>",              desc = "undo history" },
+
 })
 
 -- Diagnostic navigation (outside which-key for [ and ] prefixes)

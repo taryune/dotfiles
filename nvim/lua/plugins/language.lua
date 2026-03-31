@@ -29,4 +29,9 @@ return {
     "tidalcycles/vim-tidal",
     ft = { "tidal" },
   },
+
+  -- guile
+  {
+    "https://gitlab.com/HiPhish/guile.vim"
+  }
 }
