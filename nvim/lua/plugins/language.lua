@@ -29,9 +29,20 @@ return {
     "tidalcycles/vim-tidal",
     ft = { "tidal" },
   },
-
+  -- conjure
+  {
+    "Olical/conjure",
+    ft = { "scheme", "scheme.guile", "clojure", "fennel" },
+    init = function()
+      -- Use the Guile socket client for Scheme files
+      vim.g["conjure#filetype#scheme"] = "conjure.client.guile.socket"
+      -- Default socket path; override per-project as needed
+      vim.g["conjure#client#guile#socket#pipename"] = ".guile-repl.socket"
+    end,
+  },
   -- guile
   {
-    "https://gitlab.com/HiPhish/guile.vim"
-  }
+    "https://gitlab.com/HiPhish/guile.vim",
+    ft = { "scheme", "scheme.guile" },
+  },
 }
