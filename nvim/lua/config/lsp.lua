@@ -10,6 +10,7 @@ vim.lsp.enable("gopls")
 vim.lsp.enable('solidity_ls')
 vim.lsp.enable('guile_ls')
 vim.lsp.enable({ 'basedpyright', 'ruff' })
+vim.lsp.enable('julials')
 -- vim.lsp.enable("hls")
 
 -- Attach lsp_signature on LspAttach
