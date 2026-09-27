@@ -45,4 +45,12 @@ return {
     "https://gitlab.com/HiPhish/guile.vim",
     ft = { "scheme", "scheme.guile" },
   },
+  -- markdown
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-mini/mini.nvim' }, -- if you use the mini.nvim suite
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+  }
 }
